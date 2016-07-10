@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ScienceJourney.Models.Slider>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../assets/bjqs.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../assets/demo.css">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="../assets/js/bjqs-1.3.min.js"></script>
+</head>
+<body>
+    <form id="form1">
+        <div id="container">
+            <div id="banner-fade">
+                <ul class="bjqs">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <img src='@Html.DisplayFor(modelItem => item.src)'
+                                 title='@Html.DisplayFor(modelItem => item.title)' alt="">
+                        </li>
+
+                    }
+
+                </ul>
+            </div>
+            <script class="secret-source" style="display:none;">
+                jQuery(document).ready(function ($) {
+
+                    $('#banner-fade').bjqs({
+                        height: 320,
+                        width: 620,
+                        responsive: true
+                    });
+
+                });
+            </script>
+        </div>
+        @*<script src="../assets/js/libs/jquery.secret-source.min.js"></script>
+            <script>
+                jQuery(function ($) {
+
+                    $('.secret-source').secretSource({
+                        includeTag: false
+                    });
+
+                    $('#banner-fade').bjqs({
+                        height: 320,
+                        width: 620,
+                        responsive: true
+                    });
+                });
+            </script>*@
+    </form>
+    <div class="row" style="width:800px; margin:0 auto;">
+        <div class="col-md-4" style="width:800px; margin:0 auto;">
+            <p>
+                Science Journey is a sample application that
+                demonstrates how to use Entity Framework 6 in an
+                ASP.NET MVC 5 web application.
+            </p>
+            <br />
+            <p>
+                James Smith on July 10, 2016 05:25:17
+                I once did something similar to a neighbor that refused to turn his “music” down.
+                He lived on the floor above mine and I positioned a speaker about 3 inches from my ceiling out a long tape reel on of things I knew were not to his taste.
+                It played for about d hours. (this was in the 70’s) then I left for the evening.
+                While someone satisfying, I decided it was too much trouble. When he told me he didn’t want to hear from me about this again, I agreed.
+                Next time, I called the police. It turns out he was a drug dealer and when the police announced them selves, there was a lot of toilet flushing happening.
+                - See more at: http://wonderfulengineering.com/this-engineer-has-taught-his-loud-neighbours-a-lesson-that-they-will-never-forget/#sthash.U1oH7PD1.dpuf
+            </p>
+        </div>
+    </div>
+</body>
+</html>

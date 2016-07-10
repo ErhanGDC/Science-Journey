@@ -1,0 +1,81 @@
+﻿@model  ScienceJourney.Models.RegisterPageViewModel
+
+<html>
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/DB/GetCountryCity.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp">
+
+
+
+    <div class="form-horizontal" align="center">
+        <h2 class="form-horizontal">Sign Up</h2>
+        <br />
+        @Html.ActionLink("Return to Home", "Index")
+    </div>
+
+    <div class="form-horizontal" align="center" ng-controller="CtrlGetCountries" ng-init="init()">
+        <hr />
+        <br />
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" ng-model="user.first_name" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="last_name">Last Name:</label><input type="text" class="form-control" id="last_name" name="last_name" ng-model="user.last_name" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="pw1">Password</label><input type="password" class="form-control" id="pw1" name="pw1" ng-model="user.pw1" required></input>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="pw2">Password Repeat</label><input type="password" class="form-control" id="pw2" name="pw2" ng-model="user.pw2" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="email">Email:</label><input type="email" class="form-control" id="email" name="email" ng-model="user.email" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="Gender">Gender:</label>
+            <input type="radio" name="gender" value="male" ng-model="user.gender"> Male
+            <input type="radio" name="gender" value="female" ng-model="user.gender"> Female
+            <input type="radio" name="gender" value="unknown" ng-model="user.gender"> Unknown
+        </div>
+        <br />
+        <div>
+            <div class="form-group">
+                <label for="country"> Country: </label>
+                <select name="country" ng-change="getCityByCountryId()" ng-model="user.country" ng-options="item as item.name for item in countries">
+                    <option value="">---Select Country---</option>
+                </select><br>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="cities"> City: </label>
+                <select name="city" ng-model="user.city" ng-options="item as item.name for item in cities">
+                    <option value="">---Select City---</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="interests">Interests:</label><textarea rows="4" cols="50" class="form-control" id="interests" name="interests" ng-model="user.interests"></textarea>
+        </div>
+        <br />
+        <button type="button" class="btn btn-primary" ng-click="send()" >Submit</button>
+    </div>
+
+    @*<div ng-controller="1">
+            <!-- scope --> $scope.a = 1
+            <div ng-controller="2">
+                <!-- scope -->$scope.$parent.a // return 1
+            </div>
+        </div>*@
+</body>
+</html>

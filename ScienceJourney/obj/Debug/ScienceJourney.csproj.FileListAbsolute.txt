@@ -1,0 +1,175 @@
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\ScienceJourney.dll.config
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\ScienceJourney.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\ScienceJourney.pdb
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Antlr3.Runtime.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\EntityFramework.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\EntityFramework.SqlServer.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\log4net.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Newtonsoft.Json.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Owin.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Helpers.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Mvc.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Optimization.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Razor.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Deployment.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Razor.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\WebGrease.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\log4net.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Helpers.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Mvc.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Optimization.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.Razor.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Deployment.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Razor.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Newtonsoft.Json.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Antlr3.Runtime.pdb
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\EntityFramework.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\EntityFramework.SqlServer.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.pdb
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\FakeData.dll
+C:\Users\LG\Desktop\Second\ScienceJourney\ScienceJourney\bin\FakeData.pdb
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\ScienceJourney.dll.config
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\ScienceJourney.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\ScienceJourney.pdb
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Antlr3.Runtime.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.SqlServer.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\FakeData.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Newtonsoft.Json.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Owin.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Helpers.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Mvc.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Optimization.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Razor.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Razor.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\WebGrease.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.SqlServer.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\FakeData.pdb
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Helpers.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Mvc.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Optimization.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Razor.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Razor.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Newtonsoft.Json.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Antlr3.Runtime.pdb
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.dll
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.pdb
+C:\Users\Erhan\Desktop\My Books\My Individual Project\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\ScienceJourney.dll.config
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\ScienceJourney.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\ScienceJourney.pdb
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Antlr3.Runtime.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.SqlServer.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\FakeData.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\log4net.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Newtonsoft.Json.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Owin.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Helpers.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Mvc.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Optimization.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Razor.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Deployment.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Razor.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\WebGrease.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\EntityFramework.SqlServer.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\FakeData.pdb
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\log4net.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Helpers.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Mvc.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Optimization.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.Razor.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Deployment.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\System.Web.WebPages.Razor.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Newtonsoft.Json.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Antlr3.Runtime.pdb
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.dll
+C:\Users\LG\Desktop\My Individual Project\ScienceJourney\ScienceJourney\obj\Debug\ScienceJourney.pdb

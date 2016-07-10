@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScienceJourneyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country_Province_State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherDetails" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Artefacts">
+    <Key>
+      <PropertyRef Name="ArtefactID" />
+    </Key>
+    <Property Name="ArtefactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MuseumID" Type="int" />
+    <Property Name="ArtefactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ArtefactDescription" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="id" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="country_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="countries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="sortname" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="password" Type="char" MaxLength="41" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="interests" Type="text" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Museums">
+    <Key>
+      <PropertyRef Name="MuseumID" />
+    </Key>
+    <Property Name="MuseumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Shop" Type="bit" />
+    <Property Name="Smoking" Type="bit" />
+    <Property Name="AnnualVisitorCount" Type="int" />
+    <Property Name="DateBuilt" Type="datetime" />
+    <Property Name="OpeningHours" Type="time" Precision="7" />
+    <Property Name="MuseumName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MuseumDescription" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ScienceJourney.dbo.Scientist' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Scientist">
+          <Property Name="ScientistID" Type="int" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="AddressID" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Artefacts_Museums">
+    <End Role="Museums" Type="Self.Museums" Multiplicity="0..1" />
+    <End Role="Artefacts" Type="Self.Artefacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Museums">
+        <PropertyRef Name="MuseumID" />
+      </Principal>
+      <Dependent Role="Artefacts">
+        <PropertyRef Name="MuseumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Museums_Addresses">
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="0..1" />
+    <End Role="Museums" Type="Self.Museums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Museums">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ScienceJourneyModelStoreContainer">
+    <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Artefacts" EntityType="Self.Artefacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="countries" EntityType="Self.countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Museums" EntityType="Self.Museums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Cities].[id] AS [id], 
+    [Cities].[name] AS [name], 
+    [Cities].[country_id] AS [country_id]
+    FROM [dbo].[Cities] AS [Cities]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Artefacts_Museums" Association="Self.FK_Artefacts_Museums">
+      <End Role="Museums" EntitySet="Museums" />
+      <End Role="Artefacts" EntitySet="Artefacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Museums_Addresses" Association="Self.FK_Museums_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Museums" EntitySet="Museums" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

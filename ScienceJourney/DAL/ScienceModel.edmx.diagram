@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7975193a7e26428a8c12995f4c9be055" Name="Diagram1">
+        <EntityTypeShape EntityType="ScienceJourneyModel.Address" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.Artefact" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.country" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.Museum" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.City" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="ScienceJourneyModel.FK_Museums_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="ScienceJourneyModel.FK_Artefacts_Museums" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.Member" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

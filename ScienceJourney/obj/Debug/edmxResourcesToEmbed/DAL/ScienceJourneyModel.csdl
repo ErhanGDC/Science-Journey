@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScienceJourneyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country_Province_State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OtherDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Museums" Relationship="Self.FK_Museums_Addresses" FromRole="Addresses" ToRole="Museums" />
+  </EntityType>
+  <EntityType Name="Artefact">
+    <Key>
+      <PropertyRef Name="ArtefactID" />
+    </Key>
+    <Property Name="ArtefactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MuseumID" Type="Int32" />
+    <Property Name="ArtefactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArtefactDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Museum" Relationship="Self.FK_Artefacts_Museums" FromRole="Artefacts" ToRole="Museums" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="sortname" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="41" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="country" Type="String" />
+    <Property Name="city" Type="String" />
+    <Property Name="interests" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="createTime" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Museum">
+    <Key>
+      <PropertyRef Name="MuseumID" />
+    </Key>
+    <Property Name="MuseumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Shop" Type="Boolean" />
+    <Property Name="Smoking" Type="Boolean" />
+    <Property Name="AnnualVisitorCount" Type="Int32" />
+    <Property Name="DateBuilt" Type="DateTime" Precision="3" />
+    <Property Name="OpeningHours" Type="Time" Precision="7" />
+    <Property Name="MuseumName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MuseumDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_Museums_Addresses" FromRole="Museums" ToRole="Addresses" />
+    <NavigationProperty Name="Artefacts" Relationship="Self.FK_Artefacts_Museums" FromRole="Museums" ToRole="Artefacts" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="country_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Museums_Addresses">
+    <End Role="Addresses" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="Museums" Type="Self.Museum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Museums">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Artefacts_Museums">
+    <End Role="Museums" Type="Self.Museum" Multiplicity="0..1" />
+    <End Role="Artefacts" Type="Self.Artefact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Museums">
+        <PropertyRef Name="MuseumID" />
+      </Principal>
+      <Dependent Role="Artefacts">
+        <PropertyRef Name="MuseumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ScienceJourneyEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Artefacts" EntityType="Self.Artefact" />
+    <EntitySet Name="countries" EntityType="Self.country" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="Museums" EntityType="Self.Museum" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <AssociationSet Name="FK_Museums_Addresses" Association="Self.FK_Museums_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Museums" EntitySet="Museums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Artefacts_Museums" Association="Self.FK_Artefacts_Museums">
+      <End Role="Museums" EntitySet="Museums" />
+      <End Role="Artefacts" EntitySet="Artefacts" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="ScienceJourneyModel.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

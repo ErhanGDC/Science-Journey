@@ -1,0 +1,79 @@
+@model  ScienceJourney.Models.RegisterPageViewModel
+
+<html>
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/DB/GetCountryCity.js"></script>
+</head>
+<body ng-app="myApp">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+
+        <div class="form-horizontal" align="center">
+            <h2 class="form-horizontal">Sign Up</h2>
+            <br />
+            @Html.ActionLink("Return to Home", "Index")
+        </div>
+
+        <div class="form-horizontal" align="center">
+            <hr />
+            <br />
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" ng-model="first_name" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="last_name">Last Name:</label><input type="text" class="form-control" id="last_name" name="last_name" ng-model="last_name" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="password">Password</label><input type="password" class="form-control" id="password" name="password" ng-model="password"></input>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="passwordRepeat">Password Repeat</label><input type="password" class="form-control" id="passwordRepeat" name="passwordRepeat" ng-model="passwordRepeat" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="email">Email:</label><input type="email" class="form-control" id="email" name="email" ng-model="email" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="Gender">Gender:</label>
+                <input type="radio" name="gender" value="male" ng-model="male"> Male
+                <input type="radio" name="gender" value="female" ng-model="female"> Female
+                <input type="radio" name="gender" value="unknown" ng-model="unknown"> Unknown
+            </div>
+            <br />
+            <div ng-controller="CtrlGetCountries" ng-init="init()">
+                <div class="form-group">
+                    <label for="country"> Country: </label>
+                    <select name="country" ng-change="getCityByCountryId()" ng-model="selectedCountryId" ng-options="item.id as item.name for item in countries">
+                        <option value="">---Select Country---</option>
+                    </select><br>
+                    <h3></h3>
+                    var e = document.getElementById("country");
+                    var strUser = e.options[e.selectedIndex].value;
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="cities"> City: </label>
+                    <select name="city" ng-model="selectedCityId" ng-options="item.id as item.name for item in cities">
+                        <option value="">---Select City---</option>
+                    </select>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="interests">Interests:</label><textarea rows="4" cols="50" class="form-control" id="interests" name="interests" ng-model="interests"></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    }
+</body>
+</html>
