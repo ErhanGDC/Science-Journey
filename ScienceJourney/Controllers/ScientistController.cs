@@ -19,29 +19,26 @@ namespace ScienceJourney.Controllers
         // GET: /Scientist/
         public ActionResult Index()
         {
-            //string[] filePaths = Directory.GetFiles(Server.MapPath("~/assets/img/"));
-            //List<Slider> files = new List<Slider>();
-            //foreach (string filePath in filePaths)
-            //{
-            //    string fileName = Path.GetFileName(filePath);
-            //    files.Add(new Slider
-            //    {
-            //        title = fileName.Split('.')[0].ToString(),
-            //        src = "../assets/img/" + fileName
-            //    });
-            //}
-
             return View();
         }
 
-        [HttpPost]
-        public JsonResult GetScientistById(int id)
+        [AllowAnonymous]
+        [HttpGet]
+        public JsonResult GetScientist()
         {
             try
             {
-                Scientist _scien = new Scientist();
-                _scien = db.Scientists.Find(id);
-                return Json(_scien, JsonRequestBehavior.AllowGet);
+                var countries = (from u in db.Scientists
+                                 select new Scientist
+                                 {
+                                     ScientistID = u.ScientistID,
+                                     FirstName = u.FirstName,
+                                     LastName = u.LastName,
+                                     MiddleName = u.MiddleName,
+                                     Title = u.Title
+                                 }).ToList();
+
+                return Json(countries, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
@@ -49,9 +46,7 @@ namespace ScienceJourney.Controllers
                 log.Error(ex.Message);
             }
             return Json(null);
-        
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -60,5 +55,5 @@ namespace ScienceJourney.Controllers
             }
             base.Dispose(disposing);
         }
-	}
+    }
 }
