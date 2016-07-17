@@ -1,11 +1,7 @@
 ﻿using log4net;
 using ScienceJourney.DAL;
-using ScienceJourney.Models;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ScienceJourney.Controllers
@@ -29,7 +25,7 @@ namespace ScienceJourney.Controllers
             try
             {
                 var countries = (from u in db.Scientists
-                                 select new Scientist
+                                 select new
                                  {
                                      ScientistID = u.ScientistID,
                                      FirstName = u.FirstName,
@@ -45,7 +41,7 @@ namespace ScienceJourney.Controllers
                 log.Info(String.Format("Exception occurred"));
                 log.Error(ex.Message);
             }
-            return Json(null);
+            return Json(null, JsonRequestBehavior.AllowGet);
         }
         protected override void Dispose(bool disposing)
         {

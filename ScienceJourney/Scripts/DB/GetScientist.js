@@ -3,7 +3,6 @@
     var app = angular.module('myApp', []);
     debugger;
     app.controller('CtrlGetScientist', function ($scope, $http) {
-        $scope.Scientist = [];
         debugger;
         $scope.init = function () {
             debugger;
@@ -15,16 +14,17 @@
             $http.get("/Scientist/GetScientist")
             .then(function (response) {
                 debugger;
-                angular.forEach(response.data, function (value, index) {
-                    debugger;
-                    $scope.Scientist.push({
-                        "FirstName": value.FirstName,
-                        "MiddleName": value.MiddleName,
-                        "LastName": value.LastName,
-                        "Title": value.Title
-                    });
-                    debugger;
-                });
+                $scope.scientists = response.data;
+                //angular.forEach(response.data, function (value, index) {
+                //    debugger;
+                //    $scope.scientists.push({
+                //        "FirstName": value.FirstName,
+                //        "MiddleName": value.MiddleName,
+                //        "LastName": value.LastName,
+                //        "Title": value.Title
+                //    });
+                //    debugger;
+                //});
             });
         };
     });

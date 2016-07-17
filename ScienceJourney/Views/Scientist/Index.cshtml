@@ -9,16 +9,28 @@
     <link href="~/Content/ScientistTable.css" rel="stylesheet" />
 </head>
 <body ng-app="myApp">
-    <div ng-controller="CtrlGetScientist">
+    <div ng-controller="CtrlGetScientist" ng-init="init()">
 
         <table>
-            <tr ng-repeat="scien in scientists">
-                <td>{{Scientist.FirstName}}</td>
-                <td>{{Scientist.MiddleName}}</td>
-                <td>{{Scientist.LastName}}</td>
-                <td>{{Scientist.Title}}</td>
-                <td><a href="#" data-ng-click="selectScientist(Scientist.ScientistID)">Select</a></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Title</th>
+                    <th>Middle Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="scien in scientists">
+                    <td>{{scien.FirstName}}</td>
+                    <td>{{scien.LastName}}</td>
+                    <td>{{scien.Title}}</td>
+                    <td>{{scien.MiddleName}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
         </table>
 
     </div>
