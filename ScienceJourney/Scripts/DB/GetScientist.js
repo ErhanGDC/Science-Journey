@@ -1,46 +1,51 @@
 ﻿
 (function () {
     var app = angular.module('myApp', []);
-    debugger;
-    app.controller('CtrlGetScientist', function ($scope, $http) {
-        debugger;
+    app.controller('CtrlGetScientist', function ($scope,$http) {
         $scope.init = function () {
-            debugger;
             GetScientist();
         };
-        debugger;
         var GetScientist = function () {
-            debugger;
-            $http.get("/Scientist/GetScientist")
-            .then(function (response) {
-                debugger;
+            $http.get("/Scientist/GetScientist").then(function (response) {
+
                 $scope.scientists = response.data;
-                //angular.forEach(response.data, function (value, index) {
-                //    debugger;
-                //    $scope.scientists.push({
-                //        "FirstName": value.FirstName,
-                //        "MiddleName": value.MiddleName,
-                //        "LastName": value.LastName,
-                //        "Title": value.Title
-                //    });
-                //    debugger;
-                //});
             });
-        };
-    });
+        }
+    })
+
 })();
 
 
-
-
-
-
-
-
-
-
-
-
+//(function () {
+//    var app = angular.module('myApp', []);
+//    debugger;
+//    app.controller('CtrlGetScientist', function ($scope, $http) {
+//        debugger;
+//        $scope.init = function () {
+//            debugger;
+//            GetScientist();
+//        };
+//        debugger;
+//        var GetScientist = function () {
+//            debugger;
+//            $http.get("/Scientist/GetScientist")
+//            .then(function (response) {
+//                debugger;
+//                $scope.scientists = response.data;
+//                //angular.forEach(response.data, function (value, index) {
+//                //    debugger;
+//                //    $scope.scientists.push({
+//                //        "FirstName": value.FirstName,
+//                //        "MiddleName": value.MiddleName,
+//                //        "LastName": value.LastName,
+//                //        "Title": value.Title
+//                //    });
+//                //    debugger;
+//                //});
+//            });
+//        };
+//    });
+//})();
 
 
 

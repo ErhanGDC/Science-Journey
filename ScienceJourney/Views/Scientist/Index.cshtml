@@ -6,38 +6,66 @@
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-messages.min.js"></script>
     <script src="~/Scripts/DB/GetScientist.js"></script>
-    <link href="~/Content/ScientistTable.css" rel="stylesheet" />
+    <link href="~/Content/ScientistPic.css" rel="stylesheet" />
 </head>
 <body ng-app="myApp">
-    <div ng-controller="CtrlGetScientist" ng-init="init()">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Last Name</th>
-                    <th>Title</th>
-                    <th>Middle Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="scien in scientists">
-                    <td>{{scien.FirstName}}</td>
-                    <td>{{scien.LastName}}</td>
-                    <td>{{scien.Title}}</td>
-                    <td>{{scien.MiddleName}}</td>
-                </tr>
-            </tbody>
-            <tfoot>
-
-            </tfoot>
-        </table>
-
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="~/Content/scientists/William.jpg">
+                <img src="~/Content/scientists/William.jpg" alt="Trolltunga Norway" width="300" height="200">
+            </a>
+            <div class="desc">William James Sidis was an American child prodigy with exceptional mathematical abilities and a claimed mastery of many languages.</div>
+        </div>
     </div>
+    <br />
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="~/Content/scientists/marconi.jpg">
+                <img src="~/Content/scientists/marconi.jpg" alt="Forest" width="600" height="400">
+            </a>
+            <div class="desc">Guglielmo Marconi, 1st Marquis of Marconi was an Italian inventor and electrical engineer known for his pioneering work on long-distance radio transmission and for his development of Marconi's law and a radio telegraph system.</div>
+        </div>
+    </div>
+    <br />
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="~/Content/scientists/Robert_Oppenheimer.jpg">
+                <img src="~/Content/scientists/Robert_Oppenheimer.jpg" alt="Mountains" width="600" height="400">
+            </a>
+            <div class="desc">Julius Robert Oppenheimer was an American theoretical physicist and professor of physics at the University of California, Berkeley.</div>
+        </div>
+    </div>
+    <br />
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="~/Content/scientists/david.jpg">
+                <img src="~/Content/scientists/david.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">David Hilbert was a German mathematician. He is recognized as one of the most influential and universal mathematicians of the 19th and early 20th centuries.</div>
+        </div>
+    </div>
+    <br />
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="~/Content/scientists/Alan.jpg">
+                <img src="~/Content/scientists/Alan.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">Alan Mathison Turing OBE FRS was a pioneering English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist.</div>
+        </div>
+    </div>
+    <br />
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="~/Content/scientists/bruni.jpg">
+                <img src="~/Content/scientists/bruni.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">Abū Rayḥān Muḥammad ibn Aḥmad Al-Bīrūnī, known as Al-Biruni in English, was a Khwarezmian Iranian Muslim scholar and polymath.</div>
+        </div>
+    </div>
+    <br />
+    <div class="clearfix"></div>
 
-    <script>
-
-    </script>
+  
 
 </body>
 </html>

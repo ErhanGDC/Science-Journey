@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MuseumController.cs" />
     <Compile Include="Controllers\ScientistController.cs" />
     <Compile Include="DAL\Address.cs">
       <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
@@ -231,6 +232,7 @@
     <Compile Include="Models\CountryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MemberModel.cs" />
+    <Compile Include="Models\MuseumModel.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\RegisterPageViewModel.cs" />
     <Compile Include="Models\ScientistPageViewModel.cs" />
@@ -247,10 +249,17 @@
     <Content Include="assets\img\img1.jpg" />
     <Content Include="assets\img\img2.jpg" />
     <Content Include="assets\img\img3.jpg" />
+    <Content Include="Content\images\tesla.jpg" />
     <Content Include="Content\images\b1.jpg" />
     <Content Include="Content\images\sahb.jpg" />
     <Content Include="Content\map.css" />
-    <Content Include="Content\ScientistTable.css" />
+    <Content Include="Content\ScientistPic.css" />
+    <Content Include="Content\scientists\Alan.jpg" />
+    <Content Include="Content\scientists\bruni.jpg" />
+    <Content Include="Content\scientists\david.jpg" />
+    <Content Include="Content\scientists\marconi.jpg" />
+    <Content Include="Content\scientists\Robert_Oppenheimer.jpg" />
+    <Content Include="Content\scientists\William.jpg" />
     <Content Include="Content\style.css" />
     <Content Include="DAL\ScienceJourneyEntities1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -295,6 +304,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DB\GetCountryCity.js" />
+    <Content Include="Scripts\DB\GetMusems.js" />
     <Content Include="Scripts\DB\GetScientist.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -1092,6 +1102,7 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Scientist\Index.cshtml" />
+    <Content Include="Views\Museum\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

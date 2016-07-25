@@ -1,0 +1,41 @@
+﻿@model ScienceJourney.Models.MuseumModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/DB/GetMusems.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="CtrlGetMuseum" ng-init="init()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Museum Name</th>
+                    <th>Museum Description</th>
+                    <th>Smoking</th>
+                    <th>Annual Visitor Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mus in museums">
+                    <td>{{mus.MuseumName}}</td>
+                    <td>{{mus.MuseumDescription}}</td>
+                    <td>{{mus.Smoking}}</td>
+                    <td>{{mus.AnnualVisitorCount}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+    </div>
+</body>
+</html>
+
+
+

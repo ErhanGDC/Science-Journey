@@ -206,7 +206,6 @@ C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\WebGrease.dll
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\EntityFramework.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\EntityFramework.SqlServer.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\FakeData.pdb
-C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\log4net.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\System.Web.Helpers.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\System.Web.Mvc.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\System.Web.Optimization.xml
@@ -228,6 +227,5 @@ C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.O
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.dll
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.pdb
