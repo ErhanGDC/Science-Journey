@@ -1,0 +1,29 @@
+﻿@model ScienceJourney.Models.ArtefactModel
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/DB/GetArtefact.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="CtrlGetArtefact" ng-init="init()">
+     
+        <br />
+        <br />
+        <select ng-model="myOptions" ng-options="item.ArtefactID as item.ArtefactName for item in artefacts">
+        <option value="">Select artefact</option>
+        </select>
+
+        <br />
+        <h1>You selected: {{myOptions}}</h1>
+        <p>Selected Id : {{item.ArtefactID}}</p>
+        <br />
+        <p>Selected Id : {{item.ArtefactName}}</p>
+        <br />
+    </div>
+</body>
+</html>

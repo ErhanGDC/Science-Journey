@@ -18,7 +18,7 @@
     <Property Name="ArtefactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MuseumID" Type="int" />
     <Property Name="ArtefactName" Type="nvarchar" MaxLength="50" />
-    <Property Name="ArtefactDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="ArtefactDescription" Type="nvarchar(max)" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -85,7 +85,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     <Key>
       <PropertyRef Name="ScientistID" />
     </Key>
-    <Property Name="ScientistID" Type="int" Nullable="false" />
+    <Property Name="ScientistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LastName" Type="varchar" MaxLength="50" />
     <Property Name="FirstName" Type="varchar" MaxLength="50" />
     <Property Name="AddressID" Type="int" />

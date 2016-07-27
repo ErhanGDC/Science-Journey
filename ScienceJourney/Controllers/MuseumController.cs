@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 
+
 namespace ScienceJourney.Controllers
 {
     public class MuseumController : Controller
@@ -31,6 +32,8 @@ namespace ScienceJourney.Controllers
                                    MuseumName = u.MuseumName,
                                    OpeningHours = u.OpeningHours
                                }).ToList();
+
+
 
                 return Json(museums, JsonRequestBehavior.AllowGet);
             }

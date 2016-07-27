@@ -23,7 +23,7 @@
           <Property Name="ArtefactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MuseumID" Type="int" />
           <Property Name="ArtefactName" Type="nvarchar" MaxLength="50" />
-          <Property Name="ArtefactDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="ArtefactDescription" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -90,7 +90,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
           <Key>
             <PropertyRef Name="ScientistID" />
           </Key>
-          <Property Name="ScientistID" Type="int" Nullable="false" />
+          <Property Name="ScientistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LastName" Type="varchar" MaxLength="50" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" />
           <Property Name="AddressID" Type="int" />
@@ -268,7 +268,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
           <Property Name="ArtefactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MuseumID" Type="Int32" />
           <Property Name="ArtefactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ArtefactDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ArtefactDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Museum" Relationship="Self.FK_Artefacts_Museums" FromRole="Artefacts" ToRole="Museums" />
           <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Artefacts" FromRole="Artefact" ToRole="Article" />
         </EntityType>

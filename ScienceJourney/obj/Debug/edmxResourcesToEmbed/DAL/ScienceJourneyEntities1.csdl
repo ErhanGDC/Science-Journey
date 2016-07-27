@@ -19,7 +19,7 @@
     <Property Name="ArtefactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MuseumID" Type="Int32" />
     <Property Name="ArtefactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ArtefactDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ArtefactDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Museum" Relationship="Self.FK_Artefacts_Museums" FromRole="Artefacts" ToRole="Museums" />
     <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Artefacts" FromRole="Artefact" ToRole="Article" />
   </EntityType>
