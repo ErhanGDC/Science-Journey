@@ -10,20 +10,31 @@
 </head>
 <body ng-app="myApp">
 
-    <div ng-controller="CtrlGetArtefact" ng-init="init()">
-     
-        <br />
-        <br />
-        <select ng-model="myOptions" ng-options="item.ArtefactID as item.ArtefactName for item in artefacts">
-        <option value="">Select artefact</option>
-        </select>
-
-        <br />
-        <h1>You selected: {{myOptions}}</h1>
-        <p>Selected Id : {{item.ArtefactID}}</p>
-        <br />
-        <p>Selected Id : {{item.ArtefactName}}</p>
-        <br />
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div ng-controller="CtrlGetArtefact" ng-init="init()">
+                    <br />
+                    <br />
+                    <select ng-model="myOptions" ng-options="item.ArtefactID as item.ArtefactName for item in artefacts">
+                        <option value="">Select Artefact Please</option>
+                    </select>
+                    <br />
+                    <h1>You selected: {{myOptions}}</h1>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div ng-controller="CtrlGetMuseum" ng-init="init()">
+                    <select ng-model="museumOptions" ng-options="item.MuseumID as item.MuseumName for item in museums">
+                        <option value="">Select Museum Please</option>
+                    </select>
+                    <br />
+                    <h1>You selected: {{museumOptions}}</h1>
+                </div>
+            </td>
+        </tr>
+    </table>    
 </body>
 </html>

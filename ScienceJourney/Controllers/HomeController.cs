@@ -1,14 +1,11 @@
 ﻿using log4net;
+using ScienceJourney.DAL;
 using ScienceJourney.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using FakeData;
-using System.Data.Entity.Infrastructure;
-using ScienceJourney.DAL;
 using System.IO;
+using System.Linq;
+using System.Web.Mvc;
 
 
 namespace ScienceJourney.Controllers
@@ -35,7 +32,7 @@ namespace ScienceJourney.Controllers
                         title = fileName.Split('.')[0].ToString(),
                         src = "../assets/img/" + fileName
                     });
-                }               
+                }
             }
             catch (Exception ex)
             {

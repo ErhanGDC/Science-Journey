@@ -18,11 +18,12 @@ namespace ScienceJourney.Controllers
             return View();
         }
 
-        public JsonResult GetArtefacts()
+        public JsonResult GetArtefactsByMuseumId(int museumId)
         {
             try
             {
                 var artefacts = (from u in context.Artefacts
+                                 where u.MuseumID == museumId
                                  select new
                                  {
                                      ArtefactName = u.ArtefactName,
@@ -33,6 +34,30 @@ namespace ScienceJourney.Controllers
 
                 return Json(artefacts, JsonRequestBehavior.AllowGet);
 
+            }
+            catch (Exception ex)
+            {
+                log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
+                log.Error(ex.Message);
+            }
+            return Json(null, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetMuseums()
+        {
+            try
+            {
+                var museums = (from u in context.Museums
+                               select new
+                               {
+                                   AnnualVisitorCount = u.AnnualVisitorCount,
+                                   MuseumDescription = u.MuseumDescription,
+                                   MuseumName = u.MuseumName,
+                                   OpeningHours = u.OpeningHours,
+                                   MuseumID = u.MuseumID
+                               }).ToList();
+
+                return Json(museums, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
