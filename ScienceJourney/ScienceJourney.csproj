@@ -229,7 +229,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ArtefactModel.cs" />
+    <Compile Include="Models\ArtefactViewModel.cs" />
     <Compile Include="Models\CityModel.cs" />
     <Compile Include="Models\CountryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -246,11 +246,13 @@
     <Content Include="assets\bjqs.css" />
     <Content Include="assets\demo.css" />
     <Content Include="assets\js\libs\jquery.secret-source.min.js" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="assets\img\img1.jpg" />
     <Content Include="assets\img\img2.jpg" />
     <Content Include="assets\img\img3.jpg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\tesla.jpg" />
     <Content Include="Content\images\b1.jpg" />
     <Content Include="Content\images\sahb.jpg" />
@@ -263,6 +265,7 @@
     <Content Include="Content\scientists\Robert_Oppenheimer.jpg" />
     <Content Include="Content\scientists\William.jpg" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="DAL\ScienceJourneyEntities1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ScienceJourneyEntities1.edmx</DependentUpon>
@@ -301,6 +304,10 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -331,6 +338,15 @@
     </Content>
     <Content Include="assets\js\bjqs-1.3.js" />
     <Content Include="assets\js\bjqs-1.3.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1113,10 +1129,6 @@
     <Folder Include="Logger\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

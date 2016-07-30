@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ScienceJourney.Models
 {
-    public class ArtefactModel
+    public class ArtefactViewModel
     {
         public int ArtefactID { get; set; }
         public Nullable<int> MuseumID { get; set; }

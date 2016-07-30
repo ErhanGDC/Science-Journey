@@ -1,5 +1,6 @@
 ﻿using log4net;
 using ScienceJourney.DAL;
+using ScienceJourney.Models;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -18,18 +19,16 @@ namespace ScienceJourney.Controllers
             return View();
         }
 
-        public JsonResult GetArtefactsByMuseumId(int museumId)
+        public JsonResult GetArtefacts()
         {
             try
             {
                 var artefacts = (from u in context.Artefacts
-                                 where u.MuseumID == museumId
                                  select new
                                  {
                                      ArtefactName = u.ArtefactName,
                                      ArtefactDescription = u.ArtefactDescription,
-                                     ArtefactID = u.ArtefactID,
-                                     MuseumID = u.MuseumID
+                                     ArtefactID = u.ArtefactID
                                  }).ToList();
 
                 return Json(artefacts, JsonRequestBehavior.AllowGet);
@@ -65,6 +64,31 @@ namespace ScienceJourney.Controllers
                 log.Error(ex.Message);
             }
             return Json(null, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult SaveArtefact(ArtefactViewModel _viewModel)
+        {
+            try
+            {
+                Artefact model = new Artefact();
+                model.ArtefactDescription = _viewModel.ArtefactDescription;
+                model.ArtefactName = _viewModel.ArtefactName;
+                model.MuseumID = _viewModel.MuseumID;
+
+                if (ModelState.IsValid)
+                {
+                    //Save Progcess
+                    context.Artefacts.Add(model);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Info(String.Format("Exception occurred"));
+                log.Error(ex.Message);
+            }
+            return RedirectToAction("Index");
         }
     }
 }

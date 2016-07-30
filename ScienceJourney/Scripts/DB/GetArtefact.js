@@ -4,16 +4,33 @@
 
     app.controller('CtrlGetArtefact', function ($scope, $http) {
         $scope.init = function () {
-            GetArtefactsByMuseumId();
+            GetArtefact();
         };
-        var GetArtefactsByMuseumId = function () {
-            $http.get("/Artefact/GetArtefactsByMuseumId?museumId=" + $scope.museums.MuseumID).then(function (response) {
+        var GetArtefact = function () {
+            $http.get("/Artefact/GetArtefacts").then(function (response) {
                 $scope.artefacts = response.data;
             });
         }
     });
-   
-    app.controller('CtrlGetMuseum', function ($scope, $http) {
+
+    app.controller('CtrlSaveArtefact', function ($scope, $http) {
+
+        $scope.send = function () {
+            debugger;
+            console.log($scope.artefacts);
+            debugger;
+            $scope.artefacts.ArtefactDescription = $scope.artefacts.ArtefactDescription;
+            $scope.artefacts.ArtefactName = $scope.artefacts.ArtefactName;
+            $scope.artefacts.MuseumID = $scope.artefacts.MuseumID;
+
+            $http.post('/Artefact/SaveArtefact', $scope.artefacts).then(function (response) {
+                debugger;
+                console.log(response);
+                $scope.artefacts = {};
+            })
+        }
+
+
         $scope.init = function () {
             GetMuseum();
         };
@@ -21,6 +38,7 @@
             $http.get("/Artefact/GetMuseums").then(function (response) {
                 $scope.museums = response.data;
             });
-        }});
-    
+        };
+    });
+
 })();
