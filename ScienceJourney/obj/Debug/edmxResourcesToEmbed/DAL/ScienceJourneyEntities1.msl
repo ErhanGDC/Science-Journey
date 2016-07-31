@@ -111,7 +111,7 @@
       <EntityTypeMapping TypeName="ScienceJourneyModel.Article">
         <MappingFragment StoreEntitySet="Articles">
           <ScalarProperty Name="createTime" ColumnName="createTime" />
-          <ScalarProperty Name="Article1" ColumnName="Article" />
+          <ScalarProperty Name="ArticleDescription" ColumnName="ArticleDescription" />
           <ScalarProperty Name="ArtefactID" ColumnName="ArtefactID" />
           <ScalarProperty Name="ScientistID" ColumnName="ScientistID" />
           <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
@@ -122,6 +122,7 @@
     <EntitySetMapping Name="Scientists">
       <EntityTypeMapping TypeName="ScienceJourneyModel.Scientist">
         <MappingFragment StoreEntitySet="Scientist">
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="createTime" ColumnName="createTime" />
           <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
           <ScalarProperty Name="Title" ColumnName="Title" />

@@ -30,7 +30,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a prima
     <Property Name="MuseumID" Type="int" />
     <Property Name="ScientistID" Type="int" />
     <Property Name="ArtefactID" Type="int" />
-    <Property Name="Article" Type="text" />
+    <Property Name="ArticleDescription" Type="text" />
     <Property Name="createTime" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
@@ -92,6 +92,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     <Property Name="Title" Type="varchar" MaxLength="50" />
     <Property Name="MiddleName" Type="varchar" MaxLength="50" />
     <Property Name="createTime" Type="datetime" />
+    <Property Name="Picture" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -208,7 +209,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     [Articles].[MuseumID] AS [MuseumID], 
     [Articles].[ScientistID] AS [ScientistID], 
     [Articles].[ArtefactID] AS [ArtefactID], 
-    [Articles].[Article] AS [Article], 
+    [Articles].[ArticleDescription] AS [ArticleDescription], 
     [Articles].[createTime] AS [createTime]
     FROM [dbo].[Articles] AS [Articles]</DefiningQuery>
     </EntitySet>

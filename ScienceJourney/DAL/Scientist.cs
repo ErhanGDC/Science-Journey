@@ -26,6 +26,7 @@ namespace ScienceJourney.DAL
         public string Title { get; set; }
         public string MiddleName { get; set; }
         public Nullable<System.DateTime> createTime { get; set; }
+        public string Picture { get; set; }
     
         public virtual ICollection<Article> Articles { get; set; }
     }

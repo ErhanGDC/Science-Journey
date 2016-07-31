@@ -153,7 +153,6 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
     <EntitySet Name="Articles" EntityType="ScienceJourneyModel.Article" />
-    <EntitySet Name="Scientists" EntityType="ScienceJourneyModel.Scientist" />
     <AssociationSet Name="FK_Articles_Artefacts" Association="ScienceJourneyModel.FK_Articles_Artefacts">
       <End Role="Artefact" EntitySet="Artefacts" />
       <End Role="Article" EntitySet="Articles" />
@@ -162,6 +161,7 @@
       <End Role="Museum" EntitySet="Museums" />
       <End Role="Article" EntitySet="Articles" />
     </AssociationSet>
+    <EntitySet Name="Scientists" EntityType="ScienceJourneyModel.Scientist" />
     <AssociationSet Name="FK_Articles_Scientist" Association="ScienceJourneyModel.FK_Articles_Scientist">
       <End Role="Scientist" EntitySet="Scientists" />
       <End Role="Article" EntitySet="Articles" />
@@ -186,24 +186,11 @@
     <Property Name="MuseumID" Type="Int32" />
     <Property Name="ScientistID" Type="Int32" />
     <Property Name="ArtefactID" Type="Int32" />
-    <Property Name="Article1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ArticleDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="createTime" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Artefact" Relationship="ScienceJourneyModel.FK_Articles_Artefacts" FromRole="Article" ToRole="Artefact" />
     <NavigationProperty Name="Museum" Relationship="ScienceJourneyModel.FK_Articles_Museums" FromRole="Article" ToRole="Museum" />
     <NavigationProperty Name="Scientist" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Article" ToRole="Scientist" />
-  </EntityType>
-  <EntityType Name="Scientist">
-    <Key>
-      <PropertyRef Name="ScientistID" />
-    </Key>
-    <Property Name="ScientistID" Type="Int32" Nullable="false" />
-    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="AddressID" Type="Int32" />
-    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="createTime" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Scientist" ToRole="Article" />
   </EntityType>
   <Association Name="FK_Articles_Artefacts">
     <End Type="ScienceJourneyModel.Artefact" Role="Artefact" Multiplicity="0..1" />
@@ -229,6 +216,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Scientist">
+    <Key>
+      <PropertyRef Name="ScientistID" />
+    </Key>
+    <Property Name="ScientistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createTime" Type="DateTime" Precision="3" />
+    <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Scientist" ToRole="Article" />
+  </EntityType>
   <Association Name="FK_Articles_Scientist">
     <End Type="ScienceJourneyModel.Scientist" Role="Scientist" Multiplicity="0..1" />
     <End Type="ScienceJourneyModel.Article" Role="Article" Multiplicity="*" />

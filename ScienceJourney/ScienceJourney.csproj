@@ -168,6 +168,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArtefactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MuseumController.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\ArtefactViewModel.cs" />
     <Compile Include="Models\CityModel.cs" />
     <Compile Include="Models\CountryModel.cs" />
@@ -312,6 +314,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DB\AdminProcess.js" />
     <Content Include="Scripts\DB\GetArtefact.js" />
     <Content Include="Scripts\DB\GetCountryCity.js" />
     <Content Include="Scripts\DB\GetMusems.js" />
@@ -1123,6 +1126,7 @@
     <Content Include="Views\Scientist\Index.cshtml" />
     <Content Include="Views\Museum\Index.cshtml" />
     <Content Include="Views\Artefact\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

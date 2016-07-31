@@ -35,7 +35,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a prima
           <Property Name="MuseumID" Type="int" />
           <Property Name="ScientistID" Type="int" />
           <Property Name="ArtefactID" Type="int" />
-          <Property Name="Article" Type="text" />
+          <Property Name="ArticleDescription" Type="text" />
           <Property Name="createTime" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -97,6 +97,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
           <Property Name="Title" Type="varchar" MaxLength="50" />
           <Property Name="MiddleName" Type="varchar" MaxLength="50" />
           <Property Name="createTime" Type="datetime" />
+          <Property Name="Picture" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -213,7 +214,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     [Articles].[MuseumID] AS [MuseumID], 
     [Articles].[ScientistID] AS [ScientistID], 
     [Articles].[ArtefactID] AS [ArtefactID], 
-    [Articles].[Article] AS [Article], 
+    [Articles].[ArticleDescription] AS [ArticleDescription], 
     [Articles].[createTime] AS [createTime]
     FROM [dbo].[Articles] AS [Articles]</DefiningQuery>
           </EntitySet>
@@ -402,7 +403,6 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="Articles" EntityType="ScienceJourneyModel.Article" />
-          <EntitySet Name="Scientists" EntityType="ScienceJourneyModel.Scientist" />
           <AssociationSet Name="FK_Articles_Artefacts" Association="ScienceJourneyModel.FK_Articles_Artefacts">
             <End Role="Artefact" EntitySet="Artefacts" />
             <End Role="Article" EntitySet="Articles" />
@@ -411,11 +411,12 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
             <End Role="Museum" EntitySet="Museums" />
             <End Role="Article" EntitySet="Articles" />
           </AssociationSet>
+          <EntitySet Name="Scientists" EntityType="ScienceJourneyModel.Scientist" />
           <AssociationSet Name="FK_Articles_Scientist" Association="ScienceJourneyModel.FK_Articles_Scientist">
             <End Role="Scientist" EntitySet="Scientists" />
             <End Role="Article" EntitySet="Articles" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -435,24 +436,11 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
           <Property Name="MuseumID" Type="Int32" />
           <Property Name="ScientistID" Type="Int32" />
           <Property Name="ArtefactID" Type="Int32" />
-          <Property Name="Article1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ArticleDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="createTime" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Artefact" Relationship="ScienceJourneyModel.FK_Articles_Artefacts" FromRole="Article" ToRole="Artefact" />
           <NavigationProperty Name="Museum" Relationship="ScienceJourneyModel.FK_Articles_Museums" FromRole="Article" ToRole="Museum" />
           <NavigationProperty Name="Scientist" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Article" ToRole="Scientist" />
-        </EntityType>
-        <EntityType Name="Scientist">
-          <Key>
-            <PropertyRef Name="ScientistID" />
-          </Key>
-          <Property Name="ScientistID" Type="Int32" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AddressID" Type="Int32" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="createTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Scientist" ToRole="Article" />
         </EntityType>
         <Association Name="FK_Articles_Artefacts">
           <End Type="ScienceJourneyModel.Artefact" Role="Artefact" Multiplicity="0..1" />
@@ -478,6 +466,20 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Scientist">
+          <Key>
+            <PropertyRef Name="ScientistID" />
+          </Key>
+          <Property Name="ScientistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressID" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createTime" Type="DateTime" Precision="3" />
+          <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Scientist" ToRole="Article" />
+        </EntityType>
         <Association Name="FK_Articles_Scientist">
           <End Type="ScienceJourneyModel.Scientist" Role="Scientist" Multiplicity="0..1" />
           <End Type="ScienceJourneyModel.Article" Role="Article" Multiplicity="*" />
@@ -490,7 +492,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -606,7 +608,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
             <EntityTypeMapping TypeName="ScienceJourneyModel.Article">
               <MappingFragment StoreEntitySet="Articles">
                 <ScalarProperty Name="createTime" ColumnName="createTime" />
-                <ScalarProperty Name="Article1" ColumnName="Article" />
+                <ScalarProperty Name="ArticleDescription" ColumnName="ArticleDescription" />
                 <ScalarProperty Name="ArtefactID" ColumnName="ArtefactID" />
                 <ScalarProperty Name="ScientistID" ColumnName="ScientistID" />
                 <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
@@ -617,6 +619,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
           <EntitySetMapping Name="Scientists">
             <EntityTypeMapping TypeName="ScienceJourneyModel.Scientist">
               <MappingFragment StoreEntitySet="Scientist">
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

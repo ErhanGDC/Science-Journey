@@ -1,0 +1,2 @@
+2016-07-31 21:52:36,374 [19] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurred
+2016-07-31 21:52:38,592 [19] ERROR ScienceJourney.Controllers.ArtefactController - Nesne baþvurusu bir nesnenin örneðine ayarlanmadý.

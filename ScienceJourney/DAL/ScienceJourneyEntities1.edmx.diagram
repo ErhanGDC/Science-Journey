@@ -14,10 +14,10 @@
         <EntityTypeShape EntityType="ScienceJourneyModel.City" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
         <AssociationConnector Association="ScienceJourneyModel.FK_Museums_Addresses" ManuallyRouted="false" />
         <AssociationConnector Association="ScienceJourneyModel.FK_Artefacts_Museums" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ScienceJourneyModel.Article" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ScienceJourneyModel.Scientist" Width="1.5" PointX="7.375" PointY="3.875" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.Article" Width="1.5" PointX="9.625" PointY="2.375" />
         <AssociationConnector Association="ScienceJourneyModel.FK_Articles_Artefacts" />
         <AssociationConnector Association="ScienceJourneyModel.FK_Articles_Museums" />
+        <EntityTypeShape EntityType="ScienceJourneyModel.Scientist" Width="1.5" PointX="5.375" PointY="5" />
         <AssociationConnector Association="ScienceJourneyModel.FK_Articles_Scientist" />
       </Diagram>
     </edmx:Diagrams>

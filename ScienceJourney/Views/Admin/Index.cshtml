@@ -1,0 +1,95 @@
+﻿@model ScienceJourney.Models.AdminModel
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-messages.min.js"></script>
+    <script src="~/Scripts/DB/AdminProcess.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+</head>
+<body ng-app="adminApp">
+     <br />
+    <div class="form-group" ng-controller="CtrlGetScientist" ng-init="init()" align="left">
+        <br />
+        <br />
+        <select class="form-control" ng-model="Scientist" ng-options="item.ScientistID as item.FirstName for item in scientists">
+            <option value="">Select Scientist Please</option>
+        </select>
+        <h3>You selected: {{Scientist}}</h3>
+        <br />
+        <h2>Insert a Scientist !</h2>
+        <div class="form-group">
+            <label for="FirstName">First Name:</label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="scientists.FirstName" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="MiddleName">Middle Name:</label>
+            <input class="form-control" id="MiddleName" name="MiddleName" ng-model="scientists.MiddleName" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            <input class="form-control" id="LastName" name="LastName" ng-model="scientists.LastName" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="Title">Title:</label>
+            <input class="form-control" id="Title" name="Title" ng-model="scientists.Title" required />
+        </div>
+        <div class="form-group" ng-controller="CtrlGetAddresses" ng-init="init()" align="left">
+            <br />
+            <label for="LastName">Country:</label>
+            <select class="form-control" ng-model="scientists.AddressID" ng-options="item.AddressID as item.Country for item in addresses">
+                <option value="">Select Addresses Please</option>
+            </select>
+        </div>
+        <br />
+        <button type="button" class="btn btn-primary" ng-click="send()">Submit</button>
+    </div>
+
+    <div class="form-group"  ng-controller="CtrlGetArtefact" ng-init="init()" align="left">
+        <br />
+        <br />
+        <p>Artefacts Info</p>
+        <select class="form-control" ng-model="Artefact" ng-options="item.ArtefactID as item.ArtefactName for item in artefacts">
+            <option value="">Select Artefact Please</option>
+        </select>
+        <h3>You selected: {{Artefact}}</h3>
+    </div>
+
+    <div class="form-group" ng-controller="CtrlGetMuseums" ng-init="init()" align="left">
+        <br />
+        <br />
+        <p>Museum Info</p>
+        <select class="form-control" ng-model="Museum" ng-options="item.MuseumID as item.MuseumName for item in museums">
+            <option value="">Select Museum Please</option>
+        </select>
+        <h3>You selected: {{Museum}}</h3>
+    </div>
+
+    <div class="form-group" ng-controller="CtrlGetArticles" ng-init="init()" align="left">
+        <br />
+        <br />
+        <p>Articles Info</p>
+        <select class="form-control" ng-model="Articles" ng-options="item.ArticleID as item.ArticleDescription for item in articles">
+            <option value="">Select Articles Please</option>
+        </select>
+        <h3>You selected: {{Articles}}</h3>
+    </div>
+
+    <div class="form-group" ng-controller="CtrlGetAddresses" ng-init="init()" align="left">
+        <br />
+        <br />
+        <p>Addresses Info</p>
+        <select class="form-control" ng-model="Addresses" ng-options="item.AddressID as item.Country for item in addresses">
+            <option value="">Select Addresses Please</option>
+        </select>
+        <h3>You selected: {{Addresses}}</h3>
+    </div>
+</body>
+</html>
+
