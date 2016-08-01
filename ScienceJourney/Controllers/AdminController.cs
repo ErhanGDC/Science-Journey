@@ -147,14 +147,14 @@ namespace ScienceJourney.Controllers
             try
             {
                 Scientist model = new Scientist();
-                model.ScientistID = _model._Scientist.ScientistID;
-                model.LastName = _model._Scientist.LastName;
-                model.FirstName = _model._Scientist.FirstName;
-                model.AddressID = _model._Scientist.AddressID;
-                model.Title = _model._Scientist.Title;
-                model.MiddleName = _model._Scientist.MiddleName;
+                model.ScientistID = _model.scientist.ScientistID;
+                model.LastName = _model.scientist.LastName;
+                model.FirstName = _model.scientist.FirstName;
+                model.AddressID = _model.scientist.AddressID;
+                model.Title = _model.scientist.Title;
+                model.MiddleName = _model.scientist.MiddleName;
                 model.createTime = DateTime.Now;
-                model.Picture = _model._Scientist.Picture;
+                model.Picture = _model.scientist.Picture;
 
                 if (ModelState.IsValid)
                 {

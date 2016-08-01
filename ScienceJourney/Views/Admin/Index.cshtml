@@ -23,27 +23,27 @@
         <h2>Insert a Scientist !</h2>
         <div class="form-group">
             <label for="FirstName">First Name:</label>
-            <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="scientists.FirstName" required />
+            <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="model.scientists.FirstName" required />
         </div>
         <br />
         <div class="form-group">
             <label for="MiddleName">Middle Name:</label>
-            <input class="form-control" id="MiddleName" name="MiddleName" ng-model="scientists.MiddleName" required />
+            <input class="form-control" id="MiddleName" name="MiddleName" ng-model="model.scientists.MiddleName" required />
         </div>
         <br />
         <div class="form-group">
             <label for="LastName">Last Name:</label>
-            <input class="form-control" id="LastName" name="LastName" ng-model="scientists.LastName" required />
+            <input class="form-control" id="LastName" name="LastName" ng-model="model.scientists.LastName" required />
         </div>
         <br />
         <div class="form-group">
             <label for="Title">Title:</label>
-            <input class="form-control" id="Title" name="Title" ng-model="scientists.Title" required />
+            <input class="form-control" id="Title" name="Title" ng-model="model.scientists.Title" required />
         </div>
         <div class="form-group" ng-controller="CtrlGetAddresses" ng-init="init()" align="left">
             <br />
             <label for="LastName">Country:</label>
-            <select class="form-control" ng-model="scientists.AddressID" ng-options="item.AddressID as item.Country for item in addresses">
+            <select class="form-control" ng-model="model.scientists.AddressID" ng-options="item.AddressID as item.Country for item in addresses">
                 <option value="">Select Addresses Please</option>
             </select>
         </div>
