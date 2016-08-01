@@ -1,0 +1,13 @@
+2016-08-01 22:41:19,026 [6] INFO  ScienceJourney.Controllers.HomeController - Getting files from directory
+2016-08-01 22:42:19,130 [13] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurredSystem.Web.Mvc.JsonResult GetMuseums()
+2016-08-01 22:42:19,131 [13] ERROR ScienceJourney.Controllers.ArtefactController - The underlying provider failed on Open.
+2016-08-01 22:42:19,143 [7] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurredSystem.Web.Mvc.JsonResult GetAddresses()
+2016-08-01 22:42:19,154 [12] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurredSystem.Web.Mvc.JsonResult GetArtefacts()
+2016-08-01 22:42:19,155 [7] ERROR ScienceJourney.Controllers.ArtefactController - The underlying provider failed on Open.
+2016-08-01 22:42:19,195 [14] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurredSystem.Web.Mvc.JsonResult GetAddresses()
+2016-08-01 22:42:19,195 [12] ERROR ScienceJourney.Controllers.ArtefactController - The underlying provider failed on Open.
+2016-08-01 22:42:19,196 [14] ERROR ScienceJourney.Controllers.ArtefactController - The underlying provider failed on Open.
+2016-08-01 22:42:19,211 [6] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurredSystem.Web.Mvc.JsonResult GetScientist()
+2016-08-01 22:42:19,211 [15] INFO  ScienceJourney.Controllers.ArtefactController - Exception occurredSystem.Web.Mvc.JsonResult GetArticles()
+2016-08-01 22:42:19,212 [6] ERROR ScienceJourney.Controllers.ArtefactController - The underlying provider failed on Open.
+2016-08-01 22:42:19,213 [15] ERROR ScienceJourney.Controllers.ArtefactController - The underlying provider failed on Open.

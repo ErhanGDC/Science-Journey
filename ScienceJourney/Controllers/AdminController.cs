@@ -142,24 +142,25 @@ namespace ScienceJourney.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveScientist(AdminModel _model)
+        public ActionResult SaveScientist(AdminModel model)
         {
             try
             {
-                Scientist model = new Scientist();
-                model.ScientistID = _model.scientist.ScientistID;
-                model.LastName = _model.scientist.LastName;
-                model.FirstName = _model.scientist.FirstName;
-                model.AddressID = _model.scientist.AddressID;
-                model.Title = _model.scientist.Title;
-                model.MiddleName = _model.scientist.MiddleName;
-                model.createTime = DateTime.Now;
-                model.Picture = _model.scientist.Picture;
+                Scientist scientist = model.Scientist;
+                //Scientist model = new Scientist();
+                //model.ScientistID = model.scientist.ScientistID;
+                //model.LastName = model.scientist.LastName;
+                //model.FirstName = model.scientist.FirstName;
+                //model.AddressID = model.scientist.AddressID;
+                //model.Title = model.scientist.Title;
+                //model.MiddleName = model.scientist.MiddleName;
+                //model.createTime = DateTime.Now;
+                //model.Picture = model.scientist.Picture;
 
                 if (ModelState.IsValid)
                 {
                     //Save Progcess
-                    context.Scientists.Add(model);
+                    //context.Scientists.Add(model);
                     context.SaveChanges();
                 }
             }

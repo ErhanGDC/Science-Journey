@@ -58,15 +58,18 @@
             debugger;
             console.log($scope.scientists);
             debugger;
-            $scope.scientists.ScientistID = $scope.scientists.ScientistID;
-            $scope.scientists.LastName = $scope.scientists.LastName;
-            $scope.scientists.FirstName = $scope.scientists.FirstName;
-            $scope.scientists.AddressID = $scope.scientists.AddressID;
-            $scope.scientists.Title = $scope.scientists.Title;
-            $scope.scientists.MiddleName = $scope.scientists.MiddleName;
-            $scope.scientists.Picture = $scope.scientists.Picture;
 
-            $http.post('/Admin/SaveScientist', $scope.scientists).then(function (response) {
+            //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
+            
+            //$scope.scientists.ScientistID = $scope.scientists.ScientistID;
+            //$scope.scientists.LastName = $scope.scientists.LastName;
+            //$scope.scientists.FirstName = $scope.scientists.FirstName;
+            //$scope.scientists.AddressID = $scope.scientists.AddressID;
+            //$scope.scientists.Title = $scope.scientists.Title;
+            //$scope.scientists.MiddleName = $scope.scientists.MiddleName;
+            //$scope.scientists.Picture = $scope.scientists.Picture;
+
+            $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
                 debugger;
                 console.log(response);
                 $scope.scientists = {};
