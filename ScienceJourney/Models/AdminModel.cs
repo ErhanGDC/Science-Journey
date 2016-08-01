@@ -5,10 +5,10 @@ namespace ScienceJourney.Models
 {
     public class AdminModel
     {
-        public Scientist scientist { get; set; }
-        public Address address { get; set; }
-        public Museum museum { get; set; }
-        public Artefact artefact { get; set; }
-        public Article article { get; set; }
+        public Scientist Scientist { get; set; }
+        public Address Address { get; set; }
+        public Museum Museum { get; set; }
+        public Artefact Artefact { get; set; }
+        public Article Article { get; set; }
     }
 }
