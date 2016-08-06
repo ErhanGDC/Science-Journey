@@ -12,7 +12,7 @@ namespace ScienceJourney.Controllers
 {
     public class HomeController : Controller
     {
-        private ScienceJourneyEntities2 db = new ScienceJourneyEntities2();
+        private ScienceJourneyEntities db = new ScienceJourneyEntities();
         static ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
 
         public ActionResult Index()

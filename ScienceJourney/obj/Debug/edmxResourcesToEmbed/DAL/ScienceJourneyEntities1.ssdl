@@ -10,6 +10,8 @@
     <Property Name="Country_Province_State" Type="nvarchar" MaxLength="50" />
     <Property Name="Country" Type="nvarchar" MaxLength="50" />
     <Property Name="OtherDetails" Type="nvarchar" MaxLength="255" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+    <Property Name="createTime" Type="date" />
   </EntityType>
   <EntityType Name="Artefacts">
     <Key>
@@ -19,6 +21,8 @@
     <Property Name="MuseumID" Type="int" />
     <Property Name="ArtefactName" Type="nvarchar" MaxLength="50" />
     <Property Name="ArtefactDescription" Type="nvarchar(max)" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+    <Property Name="createTime" Type="date" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -32,6 +36,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a prima
     <Property Name="ArtefactID" Type="int" />
     <Property Name="ArticleDescription" Type="text" />
     <Property Name="createTime" Type="datetime" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -80,6 +85,8 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     <Property Name="OpeningHours" Type="time" Precision="7" />
     <Property Name="MuseumName" Type="nvarchar" MaxLength="50" />
     <Property Name="MuseumDescription" Type="nvarchar" MaxLength="255" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+    <Property Name="createTime" Type="date" />
   </EntityType>
   <EntityType Name="Scientist">
     <Key>
@@ -103,6 +110,16 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UploadedFile">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileSize" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_Artefacts_Museums">
     <End Role="Museums" Type="Self.Museums" Multiplicity="0..1" />
@@ -203,6 +220,7 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     <EntitySet Name="Museums" EntityType="Self.Museums" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Scientist" EntityType="Self.Scientist" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UploadedFile" EntityType="Self.UploadedFile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Articles" EntityType="Self.Articles" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Articles].[ArticleID] AS [ArticleID], 
@@ -210,7 +228,8 @@ warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary
     [Articles].[ScientistID] AS [ScientistID], 
     [Articles].[ArtefactID] AS [ArtefactID], 
     [Articles].[ArticleDescription] AS [ArticleDescription], 
-    [Articles].[createTime] AS [createTime]
+    [Articles].[createTime] AS [createTime], 
+    [Articles].[Picture] AS [Picture]
     FROM [dbo].[Articles] AS [Articles]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="Cities" EntityType="Self.Cities" store:Type="Tables" store:Schema="dbo">

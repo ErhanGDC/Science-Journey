@@ -10,7 +10,7 @@ namespace ScienceJourney.Controllers
 {
     public class ArtefactController : Controller
     {
-        private ScienceJourneyEntities2 context = new ScienceJourneyEntities2();
+        private ScienceJourneyEntities context = new ScienceJourneyEntities();
         static ILog log = log4net.LogManager.GetLogger(typeof(ArtefactController));
         //
         // GET: /Artefact/

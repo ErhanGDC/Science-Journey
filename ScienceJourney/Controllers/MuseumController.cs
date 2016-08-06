@@ -9,7 +9,7 @@ namespace ScienceJourney.Controllers
 {
     public class MuseumController : Controller
     {
-        private ScienceJourneyEntities2 context = new ScienceJourneyEntities2();
+        private ScienceJourneyEntities context = new ScienceJourneyEntities();
         static ILog log = log4net.LogManager.GetLogger(typeof(HomeController));
         //
         // GET: /Museum/

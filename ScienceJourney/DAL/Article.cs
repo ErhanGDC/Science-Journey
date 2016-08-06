@@ -20,6 +20,7 @@ namespace ScienceJourney.DAL
         public Nullable<int> ArtefactID { get; set; }
         public string ArticleDescription { get; set; }
         public Nullable<System.DateTime> createTime { get; set; }
+        public string Picture { get; set; }
     
         public virtual Artefact Artefact { get; set; }
         public virtual Museum Museum { get; set; }

@@ -2,6 +2,7 @@
 using ScienceJourney.DAL;
 using ScienceJourney.Models;
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
@@ -10,7 +11,7 @@ namespace ScienceJourney.Controllers
 {
     public class AdminController : Controller
     {
-        private ScienceJourneyEntities2 context = new ScienceJourneyEntities2();
+        private ScienceJourneyEntities context = new ScienceJourneyEntities();
         static ILog log = log4net.LogManager.GetLogger(typeof(ArtefactController));
         //
         // GET: /Admin/
@@ -147,20 +148,11 @@ namespace ScienceJourney.Controllers
             try
             {
                 Scientist scientist = model.Scientist;
-                //Scientist model = new Scientist();
-                //model.ScientistID = model.scientist.ScientistID;
-                //model.LastName = model.scientist.LastName;
-                //model.FirstName = model.scientist.FirstName;
-                //model.AddressID = model.scientist.AddressID;
-                //model.Title = model.scientist.Title;
-                //model.MiddleName = model.scientist.MiddleName;
-                //model.createTime = DateTime.Now;
-                //model.Picture = model.scientist.Picture;
 
                 if (ModelState.IsValid)
                 {
                     //Save Progcess
-                    //context.Scientists.Add(model);
+                    context.Scientists.Add(scientist);
                     context.SaveChanges();
                 }
             }
@@ -171,6 +163,48 @@ namespace ScienceJourney.Controllers
             }
             return RedirectToAction("Index");
         }
-    }
 
+        [HttpPost]
+        public JsonResult SaveFiles(string description)
+        {
+            string Message, fileName, actualFileName;
+            Message = fileName = actualFileName = string.Empty;
+            bool flag = false;
+            if (Request.Files != null)
+            {
+                var file = Request.Files[0];
+                actualFileName = file.FileName;
+                fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                int size = file.ContentLength;
+
+                try
+                {
+                    file.SaveAs(Path.Combine(Server.MapPath("~/UploadedFiles"), fileName));
+
+                    UploadedFile f = new UploadedFile
+                    {
+
+                        FileName = actualFileName,
+                        FilePath = fileName,
+                        Description = description,
+                        FileSize = size
+                    };
+                    using (ScienceJourneyEntities dc = new ScienceJourneyEntities())
+                    {
+                        dc.UploadedFiles.Add(f);
+                        dc.SaveChanges();
+                        Message = "File uploaded successfully";
+                        flag = true;
+                    }
+                    flag = true;
+                }
+                catch (Exception ex)
+                {
+                    Message = "File upload failed! Please try again";
+                }
+
+            }
+            return new JsonResult { Data = new { Message = Message, Status = flag } };
+        }
+    }
 }

@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ScienceJourneyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country_Province_State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherDetails" Type="nvarchar" MaxLength="255" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+          <Property Name="createTime" Type="date" />
+        </EntityType>
+        <EntityType Name="Artefacts">
+          <Key>
+            <PropertyRef Name="ArtefactID" />
+          </Key>
+          <Property Name="ArtefactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MuseumID" Type="int" />
+          <Property Name="ArtefactName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ArtefactDescription" Type="nvarchar(max)" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+          <Property Name="createTime" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ScienceJourney.dbo.Articles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Articles">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MuseumID" Type="int" />
+          <Property Name="ScientistID" Type="int" />
+          <Property Name="ArtefactID" Type="int" />
+          <Property Name="ArticleDescription" Type="text" />
+          <Property Name="createTime" Type="datetime" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ScienceJourney.dbo.Cities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="countries">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sortname" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="password" Type="char" MaxLength="41" Nullable="false" />
+          <Property Name="country" Type="int" />
+          <Property Name="city" Type="int" />
+          <Property Name="interests" Type="text" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="createTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Museums">
+          <Key>
+            <PropertyRef Name="MuseumID" />
+          </Key>
+          <Property Name="MuseumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddressID" Type="int" />
+          <Property Name="Shop" Type="bit" />
+          <Property Name="Smoking" Type="bit" />
+          <Property Name="AnnualVisitorCount" Type="int" />
+          <Property Name="DateBuilt" Type="datetime" />
+          <Property Name="OpeningHours" Type="time" Precision="7" />
+          <Property Name="MuseumName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MuseumDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="50" />
+          <Property Name="createTime" Type="date" />
+        </EntityType>
+        <EntityType Name="Scientist">
+          <Key>
+            <PropertyRef Name="ScientistID" />
+          </Key>
+          <Property Name="ScientistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="AddressID" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="createTime" Type="datetime" />
+          <Property Name="Picture" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UploadedFile">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FileSize" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Artefacts_Museums">
+          <End Role="Museums" Type="Self.Museums" Multiplicity="0..1" />
+          <End Role="Artefacts" Type="Self.Artefacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Museums">
+              <PropertyRef Name="MuseumID" />
+            </Principal>
+            <Dependent Role="Artefacts">
+              <PropertyRef Name="MuseumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articles_Artefacts">
+          <End Role="Artefacts" Type="Self.Artefacts" Multiplicity="0..1" />
+          <End Role="Articles" Type="Self.Articles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artefacts">
+              <PropertyRef Name="ArtefactID" />
+            </Principal>
+            <Dependent Role="Articles">
+              <PropertyRef Name="ArtefactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articles_Museums">
+          <End Role="Museums" Type="Self.Museums" Multiplicity="0..1" />
+          <End Role="Articles" Type="Self.Articles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Museums">
+              <PropertyRef Name="MuseumID" />
+            </Principal>
+            <Dependent Role="Articles">
+              <PropertyRef Name="MuseumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articles_Scientist">
+          <End Role="Scientist" Type="Self.Scientist" Multiplicity="0..1" />
+          <End Role="Articles" Type="Self.Articles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Scientist">
+              <PropertyRef Name="ScientistID" />
+            </Principal>
+            <Dependent Role="Articles">
+              <PropertyRef Name="ScientistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Museums_Addresses">
+          <End Role="Addresses" Type="Self.Addresses" Multiplicity="0..1" />
+          <End Role="Museums" Type="Self.Museums" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Museums">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ScienceJourneyModelStoreContainer">
+          <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artefacts" EntityType="Self.Artefacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="countries" EntityType="Self.countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Museums" EntityType="Self.Museums" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scientist" EntityType="Self.Scientist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UploadedFile" EntityType="Self.UploadedFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Articles" EntityType="Self.Articles" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Articles].[ArticleID] AS [ArticleID], 
+    [Articles].[MuseumID] AS [MuseumID], 
+    [Articles].[ScientistID] AS [ScientistID], 
+    [Articles].[ArtefactID] AS [ArtefactID], 
+    [Articles].[ArticleDescription] AS [ArticleDescription], 
+    [Articles].[createTime] AS [createTime], 
+    [Articles].[Picture] AS [Picture]
+    FROM [dbo].[Articles] AS [Articles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Cities" EntityType="Self.Cities" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Cities].[id] AS [id], 
+    [Cities].[name] AS [name], 
+    [Cities].[country_id] AS [country_id]
+    FROM [dbo].[Cities] AS [Cities]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Artefacts_Museums" Association="Self.FK_Artefacts_Museums">
+            <End Role="Museums" EntitySet="Museums" />
+            <End Role="Artefacts" EntitySet="Artefacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articles_Artefacts" Association="Self.FK_Articles_Artefacts">
+            <End Role="Artefacts" EntitySet="Artefacts" />
+            <End Role="Articles" EntitySet="Articles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articles_Museums" Association="Self.FK_Articles_Museums">
+            <End Role="Museums" EntitySet="Museums" />
+            <End Role="Articles" EntitySet="Articles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articles_Scientist" Association="Self.FK_Articles_Scientist">
+            <End Role="Scientist" EntitySet="Scientist" />
+            <End Role="Articles" EntitySet="Articles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Museums_Addresses" Association="Self.FK_Museums_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Museums" EntitySet="Museums" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ScienceJourneyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country_Province_State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Museums" Relationship="Self.FK_Museums_Addresses" FromRole="Addresses" ToRole="Museums" />
+        </EntityType>
+        <EntityType Name="Artefact">
+          <Key>
+            <PropertyRef Name="ArtefactID" />
+          </Key>
+          <Property Name="ArtefactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MuseumID" Type="Int32" />
+          <Property Name="ArtefactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArtefactDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Museum" Relationship="Self.FK_Artefacts_Museums" FromRole="Artefacts" ToRole="Museums" />
+          <NavigationProperty Name="Articles" Relationship="Self.FK_Articles_Artefacts" FromRole="Artefacts" ToRole="Articles" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sortname" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="41" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="Int32" />
+          <Property Name="city" Type="Int32" />
+          <Property Name="interests" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="createTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Museum">
+          <Key>
+            <PropertyRef Name="MuseumID" />
+          </Key>
+          <Property Name="MuseumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressID" Type="Int32" />
+          <Property Name="Shop" Type="Boolean" />
+          <Property Name="Smoking" Type="Boolean" />
+          <Property Name="AnnualVisitorCount" Type="Int32" />
+          <Property Name="DateBuilt" Type="DateTime" Precision="3" />
+          <Property Name="OpeningHours" Type="Time" Precision="7" />
+          <Property Name="MuseumName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MuseumDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_Museums_Addresses" FromRole="Museums" ToRole="Addresses" />
+          <NavigationProperty Name="Artefacts" Relationship="Self.FK_Artefacts_Museums" FromRole="Museums" ToRole="Artefacts" />
+          <NavigationProperty Name="Articles" Relationship="Self.FK_Articles_Museums" FromRole="Museums" ToRole="Articles" />
+        </EntityType>
+        <EntityType Name="Scientist">
+          <Key>
+            <PropertyRef Name="ScientistID" />
+          </Key>
+          <Property Name="ScientistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressID" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createTime" Type="DateTime" Precision="3" />
+          <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Articles" Relationship="Self.FK_Articles_Scientist" FromRole="Scientist" ToRole="Articles" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UploadedFile">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileSize" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MuseumID" Type="Int32" />
+          <Property Name="ScientistID" Type="Int32" />
+          <Property Name="ArtefactID" Type="Int32" />
+          <Property Name="ArticleDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createTime" Type="DateTime" Precision="3" />
+          <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Artefact" Relationship="Self.FK_Articles_Artefacts" FromRole="Articles" ToRole="Artefacts" />
+          <NavigationProperty Name="Museum" Relationship="Self.FK_Articles_Museums" FromRole="Articles" ToRole="Museums" />
+          <NavigationProperty Name="Scientist" Relationship="Self.FK_Articles_Scientist" FromRole="Articles" ToRole="Scientist" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Museums_Addresses">
+          <End Role="Addresses" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Museums" Type="Self.Museum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Museums">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artefacts_Museums">
+          <End Role="Museums" Type="Self.Museum" Multiplicity="0..1" />
+          <End Role="Artefacts" Type="Self.Artefact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Museums">
+              <PropertyRef Name="MuseumID" />
+            </Principal>
+            <Dependent Role="Artefacts">
+              <PropertyRef Name="MuseumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articles_Artefacts">
+          <End Role="Artefacts" Type="Self.Artefact" Multiplicity="0..1" />
+          <End Role="Articles" Type="Self.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artefacts">
+              <PropertyRef Name="ArtefactID" />
+            </Principal>
+            <Dependent Role="Articles">
+              <PropertyRef Name="ArtefactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articles_Museums">
+          <End Role="Museums" Type="Self.Museum" Multiplicity="0..1" />
+          <End Role="Articles" Type="Self.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Museums">
+              <PropertyRef Name="MuseumID" />
+            </Principal>
+            <Dependent Role="Articles">
+              <PropertyRef Name="MuseumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Articles_Scientist">
+          <End Role="Scientist" Type="Self.Scientist" Multiplicity="0..1" />
+          <End Role="Articles" Type="Self.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Scientist">
+              <PropertyRef Name="ScientistID" />
+            </Principal>
+            <Dependent Role="Articles">
+              <PropertyRef Name="ScientistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ScienceJourneyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="Artefacts" EntityType="Self.Artefact" />
+          <EntitySet Name="countries" EntityType="Self.country" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Museums" EntityType="Self.Museum" />
+          <EntitySet Name="Scientists" EntityType="Self.Scientist" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UploadedFiles" EntityType="Self.UploadedFile" />
+          <EntitySet Name="Articles" EntityType="Self.Article" />
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <AssociationSet Name="FK_Museums_Addresses" Association="Self.FK_Museums_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Museums" EntitySet="Museums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artefacts_Museums" Association="Self.FK_Artefacts_Museums">
+            <End Role="Museums" EntitySet="Museums" />
+            <End Role="Artefacts" EntitySet="Artefacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articles_Artefacts" Association="Self.FK_Articles_Artefacts">
+            <End Role="Artefacts" EntitySet="Artefacts" />
+            <End Role="Articles" EntitySet="Articles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articles_Museums" Association="Self.FK_Articles_Museums">
+            <End Role="Museums" EntitySet="Museums" />
+            <End Role="Articles" EntitySet="Articles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Articles_Scientist" Association="Self.FK_Articles_Scientist">
+            <End Role="Scientist" EntitySet="Scientists" />
+            <End Role="Articles" EntitySet="Articles" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ScienceJourneyModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ScienceJourneyModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ScienceJourneyModelStoreContainer" CdmEntityContainer="ScienceJourneyEntities">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Country_Province_State" ColumnName="Country_Province_State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="OtherDetails" ColumnName="OtherDetails" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artefacts">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.Artefact">
+              <MappingFragment StoreEntitySet="Artefacts">
+                <ScalarProperty Name="ArtefactID" ColumnName="ArtefactID" />
+                <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
+                <ScalarProperty Name="ArtefactName" ColumnName="ArtefactName" />
+                <ScalarProperty Name="ArtefactDescription" ColumnName="ArtefactDescription" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countries">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.country">
+              <MappingFragment StoreEntitySet="countries">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sortname" ColumnName="sortname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="interests" ColumnName="interests" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Museums">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.Museum">
+              <MappingFragment StoreEntitySet="Museums">
+                <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="Shop" ColumnName="Shop" />
+                <ScalarProperty Name="Smoking" ColumnName="Smoking" />
+                <ScalarProperty Name="AnnualVisitorCount" ColumnName="AnnualVisitorCount" />
+                <ScalarProperty Name="DateBuilt" ColumnName="DateBuilt" />
+                <ScalarProperty Name="OpeningHours" ColumnName="OpeningHours" />
+                <ScalarProperty Name="MuseumName" ColumnName="MuseumName" />
+                <ScalarProperty Name="MuseumDescription" ColumnName="MuseumDescription" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scientists">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.Scientist">
+              <MappingFragment StoreEntitySet="Scientist">
+                <ScalarProperty Name="ScientistID" ColumnName="ScientistID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UploadedFiles">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.UploadedFile">
+              <MappingFragment StoreEntitySet="UploadedFile">
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.Article">
+              <MappingFragment StoreEntitySet="Articles">
+                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+                <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
+                <ScalarProperty Name="ScientistID" ColumnName="ScientistID" />
+                <ScalarProperty Name="ArtefactID" ColumnName="ArtefactID" />
+                <ScalarProperty Name="ArticleDescription" ColumnName="ArticleDescription" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="ScienceJourneyModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ScienceJourneyModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ScienceJourneyModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ScienceJourneyModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ScienceJourneyModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScienceJourneyModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ScienceJourneyModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScienceJourneyModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ScienceJourneyModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ScienceJourneyModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

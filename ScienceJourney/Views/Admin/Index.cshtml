@@ -11,47 +11,78 @@
     <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
 </head>
 <body ng-app="adminApp">
-     <br />
-    <div class="form-group" ng-controller="CtrlGetScientist" ng-init="init()" align="left">
-        <br />
-        <br />
-        <select class="form-control" ng-model="Scientist" ng-options="item.ScientistID as item.FirstName for item in scientists">
-            <option value="">Select Scientist Please</option>
-        </select>
-        <h3>You selected: {{Scientist}}</h3>
-        <br />
-        <h2>Insert a Scientist !</h2>
-        <div class="form-group">
-            <label for="FirstName">First Name:</label>
-            <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="model.Scientist.FirstName" required />
+    <br />
+    <br />
+    <div class="container" class="form-group" ng-controller="CtrlGetScientist" ng-init="init()" align="center">
+        <div class="panel-group">
+            <div class="panel panel-info">
+                <div class="panel-heading">Scientists</div>
+                <div class="panel-body">
+                    <div>
+                        <select class="form-control" ng-model="Scientist" ng-options="item.ScientistID as item.FirstName for item in scientists">
+                            <option value="">Select Scientist Please</option>
+                        </select>
+                        <br />
+                        <div class="form-group">
+                            <label for="FirstName">First Name:</label>
+                            <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="model.Scientist.FirstName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="MiddleName">Middle Name:</label>
+                            <input class="form-control" id="MiddleName" name="MiddleName" ng-model="model.Scientist.MiddleName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="LastName">Last Name:</label>
+                            <input class="form-control" id="LastName" name="LastName" ng-model="model.Scientist.LastName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Title">Title:</label>
+                            <input class="form-control" id="Title" name="Title" ng-model="model.Scientist.Title" required />
+                        </div>
+                    </div>
+                    <br />
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Add File</button>
+                    <div id="demo" class="collapse">
+                        <div ng-controller="FileUpload">
+                            <form novalidate name="f1" ng-submit="SaveFile()">
+                                <div style="color: red">{{Message}}</div>
+                                <table>
+                                    <tr>
+                                        <td>Select File : </td>
+                                        <td>
+                                            <br />
+                                            <input type="file" name="file" accept="image/*" onchange="angular.element(this).scope().selectFileforUpload(this.files)" required />
+                                            <span class="error" ng-show="(f1.file.$dirty || IsFormSubmitted) && f1.file.$error.required">Image required!</span>
+                                            <span class="error">{{FileInvalidMessage}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description : </td>
+                                        <td>
+                                            <input type="text" name="uFileDescription" ng-model="FileDescription" class="{{(IsFormSubmitted?'ng-dirty' + (f1.uFileDescription.$invalid?' ng-invalid':''):'')}}" autofocus />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <input type="submit" value="Upload File" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <button type="button" class="btn btn-primary" ng-click="send()">Submit</button>
+                </div>
+            </div>
         </div>
-        <br />
-        <div class="form-group">
-            <label for="MiddleName">Middle Name:</label>
-            <input class="form-control" id="MiddleName" name="MiddleName" ng-model="model.Scientist.MiddleName" required />
-        </div>
-        <br />
-        <div class="form-group">
-            <label for="LastName">Last Name:</label>
-            <input class="form-control" id="LastName" name="LastName" ng-model="model.Scientist.LastName" required />
-        </div>
-        <br />
-        <div class="form-group">
-            <label for="Title">Title:</label>
-            <input class="form-control" id="Title" name="Title" ng-model="model.Scientist.Title" required />
-        </div>
-        <div class="form-group" ng-controller="CtrlGetAddresses" ng-init="init()" align="left">
-            <br />
-            <label for="LastName">Country:</label>
-            <select class="form-control" ng-model="model.scientists.AddressID" ng-options="item.AddressID as item.Country for item in addresses">
-                <option value="">Select Addresses Please</option>
-            </select>
-        </div>
-        <br />
-        <button type="button" class="btn btn-primary" ng-click="send()">Submit</button>
     </div>
+    <br />
+    <br />   
 
-    <div class="form-group"  ng-controller="CtrlGetArtefact" ng-init="init()" align="left">
+    <div class="form-group" ng-controller="CtrlGetArtefact" ng-init="init()" align="left">
         <br />
         <br />
         <p>Artefacts Info</p>

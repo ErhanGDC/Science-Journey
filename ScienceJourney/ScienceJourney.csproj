@@ -174,52 +174,55 @@
     <Compile Include="Controllers\MuseumController.cs" />
     <Compile Include="Controllers\ScientistController.cs" />
     <Compile Include="DAL\Address.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Artefact.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Article.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\City.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\country.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Member.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Museum.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\ScienceJourneyEntities1.Context.cs">
+    <Compile Include="DAL\ScienceJourney.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ScienceJourneyEntities1.Context.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\ScienceJourneyEntities1.cs">
+    <Compile Include="DAL\ScienceJourney.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\ScienceJourneyEntities1.Designer.cs">
+    <Compile Include="DAL\ScienceJourney.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ScienceJourneyEntities1.edmx</DependentUpon>
+      <DependentUpon>ScienceJourney.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\Scientist.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\sysdiagram.cs">
-      <DependentUpon>ScienceJourneyEntities1.tt</DependentUpon>
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UploadedFile.cs">
+      <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
     <Compile Include="ExceptionHandling\ExceptionFormatter\HtmlExceptionFormatter.cs" />
     <Compile Include="ExceptionHandling\ExceptionFormatter\TextExceptionFormatter.cs" />
@@ -268,15 +271,15 @@
     <Content Include="Content\scientists\William.jpg" />
     <Content Include="Content\style.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
-    <Content Include="DAL\ScienceJourneyEntities1.Context.tt">
+    <Content Include="DAL\ScienceJourney.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ScienceJourneyEntities1.edmx</DependentUpon>
-      <LastGenOutput>ScienceJourneyEntities1.Context.cs</LastGenOutput>
+      <DependentUpon>ScienceJourney.edmx</DependentUpon>
+      <LastGenOutput>ScienceJourney.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DAL\ScienceJourneyEntities1.tt">
+    <Content Include="DAL\ScienceJourney.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ScienceJourneyEntities1.edmx</DependentUpon>
-      <LastGenOutput>ScienceJourneyEntities1.cs</LastGenOutput>
+      <DependentUpon>ScienceJourney.edmx</DependentUpon>
+      <LastGenOutput>ScienceJourney.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -332,13 +335,6 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <EntityDeploy Include="DAL\ScienceJourneyEntities1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ScienceJourneyEntities1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DAL\ScienceJourneyEntities1.edmx.diagram">
-      <DependentUpon>ScienceJourneyEntities1.edmx</DependentUpon>
-    </Content>
     <Content Include="assets\js\bjqs-1.3.js" />
     <Content Include="assets\js\bjqs-1.3.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -350,6 +346,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="DAL\ScienceJourney.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ScienceJourney.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\ScienceJourney.edmx.diagram">
+      <DependentUpon>ScienceJourney.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1106,7 +1109,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1131,6 +1136,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Logger\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

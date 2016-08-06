@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Addresses">
       <EntityTypeMapping TypeName="ScienceJourneyModel.Address">
         <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="createTime" ColumnName="createTime" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="AddressID" ColumnName="AddressID" />
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="PostCode" ColumnName="PostCode" />
@@ -16,6 +18,8 @@
     <EntitySetMapping Name="Artefacts">
       <EntityTypeMapping TypeName="ScienceJourneyModel.Artefact">
         <MappingFragment StoreEntitySet="Artefacts">
+          <ScalarProperty Name="createTime" ColumnName="createTime" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="ArtefactID" ColumnName="ArtefactID" />
           <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
           <ScalarProperty Name="ArtefactName" ColumnName="ArtefactName" />
@@ -51,6 +55,8 @@
     <EntitySetMapping Name="Museums">
       <EntityTypeMapping TypeName="ScienceJourneyModel.Museum">
         <MappingFragment StoreEntitySet="Museums">
+          <ScalarProperty Name="createTime" ColumnName="createTime" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="MuseumID" ColumnName="MuseumID" />
           <ScalarProperty Name="AddressID" ColumnName="AddressID" />
           <ScalarProperty Name="Shop" ColumnName="Shop" />
@@ -110,6 +116,7 @@
     <EntitySetMapping Name="Articles">
       <EntityTypeMapping TypeName="ScienceJourneyModel.Article">
         <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="createTime" ColumnName="createTime" />
           <ScalarProperty Name="ArticleDescription" ColumnName="ArticleDescription" />
           <ScalarProperty Name="ArtefactID" ColumnName="ArtefactID" />
@@ -130,6 +137,17 @@
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="ScientistID" ColumnName="ScientistID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedFiles">
+      <EntityTypeMapping TypeName="ScienceJourneyModel.UploadedFile">
+        <MappingFragment StoreEntitySet="UploadedFile">
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

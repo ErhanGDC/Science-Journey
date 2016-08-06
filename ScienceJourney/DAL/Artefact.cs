@@ -23,6 +23,8 @@ namespace ScienceJourney.DAL
         public Nullable<int> MuseumID { get; set; }
         public string ArtefactName { get; set; }
         public string ArtefactDescription { get; set; }
+        public string Picture { get; set; }
+        public Nullable<System.DateTime> createTime { get; set; }
     
         public virtual Museum Museum { get; set; }
         public virtual ICollection<Article> Articles { get; set; }

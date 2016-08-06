@@ -25,6 +25,8 @@ namespace ScienceJourney.DAL
         public string Country_Province_State { get; set; }
         public string Country { get; set; }
         public string OtherDetails { get; set; }
+        public string Picture { get; set; }
+        public Nullable<System.DateTime> createTime { get; set; }
     
         public virtual ICollection<Museum> Museums { get; set; }
     }

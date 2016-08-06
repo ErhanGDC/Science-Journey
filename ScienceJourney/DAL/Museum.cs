@@ -29,6 +29,8 @@ namespace ScienceJourney.DAL
         public Nullable<System.TimeSpan> OpeningHours { get; set; }
         public string MuseumName { get; set; }
         public string MuseumDescription { get; set; }
+        public string Picture { get; set; }
+        public Nullable<System.DateTime> createTime { get; set; }
     
         public virtual Address Address { get; set; }
         public virtual ICollection<Artefact> Artefacts { get; set; }

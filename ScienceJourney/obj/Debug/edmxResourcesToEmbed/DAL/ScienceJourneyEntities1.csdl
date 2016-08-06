@@ -11,6 +11,8 @@
     <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="OtherDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Museums" Relationship="Self.FK_Museums_Addresses" FromRole="Addresses" ToRole="Museums" />
+    <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createTime" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Artefact">
     <Key>
@@ -22,6 +24,8 @@
     <Property Name="ArtefactDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Museum" Relationship="Self.FK_Artefacts_Museums" FromRole="Artefacts" ToRole="Museums" />
     <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Artefacts" FromRole="Artefact" ToRole="Article" />
+    <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createTime" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="country">
     <Key>
@@ -62,6 +66,8 @@
     <NavigationProperty Name="Address" Relationship="Self.FK_Museums_Addresses" FromRole="Museums" ToRole="Addresses" />
     <NavigationProperty Name="Artefacts" Relationship="Self.FK_Artefacts_Museums" FromRole="Museums" ToRole="Artefacts" />
     <NavigationProperty Name="Articles" Relationship="ScienceJourneyModel.FK_Articles_Museums" FromRole="Museum" ToRole="Article" />
+    <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createTime" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -166,6 +172,7 @@
       <End Role="Scientist" EntitySet="Scientists" />
       <End Role="Article" EntitySet="Articles" />
     </AssociationSet>
+    <EntitySet Name="UploadedFiles" EntityType="ScienceJourneyModel.UploadedFile" />
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -191,6 +198,7 @@
     <NavigationProperty Name="Artefact" Relationship="ScienceJourneyModel.FK_Articles_Artefacts" FromRole="Article" ToRole="Artefact" />
     <NavigationProperty Name="Museum" Relationship="ScienceJourneyModel.FK_Articles_Museums" FromRole="Article" ToRole="Museum" />
     <NavigationProperty Name="Scientist" Relationship="ScienceJourneyModel.FK_Articles_Scientist" FromRole="Article" ToRole="Scientist" />
+    <Property Name="Picture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_Articles_Artefacts">
     <End Type="ScienceJourneyModel.Artefact" Role="Artefact" Multiplicity="0..1" />
@@ -242,4 +250,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="UploadedFile">
+    <Key>
+      <PropertyRef Name="FileID" />
+      <PropertyRef Name="FileName" />
+      <PropertyRef Name="FilePath" />
+      <PropertyRef Name="FileSize" />
+    </Key>
+    <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileSize" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>
