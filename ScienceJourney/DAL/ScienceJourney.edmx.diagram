@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="ScienceJourneyModel.Member" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ScienceJourneyModel.Museum" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ScienceJourneyModel.Scientist" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ScienceJourneyModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ScienceJourneyModel.UploadedFile" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ScienceJourneyModel.Article" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ScienceJourneyModel.City" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />

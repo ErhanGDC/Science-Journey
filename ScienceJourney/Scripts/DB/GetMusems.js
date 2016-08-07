@@ -5,24 +5,22 @@
     app.controller('CtrlGetMuseum', function ($scope, $http) {
         $scope.init = function () {
             GetMuseum();
+            GetPicturePath();
                  };
         var GetMuseum = function () {
             $http.get("/Museum/GetMuseums").then(function (response) {
                 $scope.museums = response.data;
             });
         }
+
+        var GetPicturePath = function () {
+            $http.get("/Museum/GetPicturePath").then(function (response) {
+                $scope.imagePaths = response.data;
+                debugger;
+                console.log($scope.imagePaths);
+                debugger;
+            });
+        }
+
     })
-
-
-    //app.controller('CtrlGetArteFact', function ($scope, $http) {
-    //    $scope.init = function () {
-    //        GetArteFact();
-    //    };
-    //    var GetArtefact = function () {
-    //        $http.get("/Museum/GetArteFects").then(function (response) {
-    //            $scope.artefacts = response.data;
-    //        });
-    //    }
-    //})
-   
 })();

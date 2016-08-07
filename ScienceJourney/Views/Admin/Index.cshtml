@@ -13,18 +13,20 @@
 <body ng-app="adminApp">
     <br />
     <br />
-    <div class="container" class="form-group" ng-controller="CtrlGetScientist" ng-init="init()" align="center">
+    <div class="container" class="form-group">
         <div class="panel-group">
             <div class="panel panel-info">
                 <div class="panel-heading">Scientists</div>
-                <div class="panel-body">
+                <div class="panel-body" align="left" ng-controller="FileUpload">
                     <div>
-                        <select class="form-control" ng-model="Scientist" ng-options="item.ScientistID as item.FirstName for item in scientists">
-                            <option value="">Select Scientist Please</option>
-                        </select>
+                        <div ng-controller="CtrlGetScientist" ng-init="init()">
+                            <select class="form-control" ng-model="Scientist" ng-options="item.ScientistID as item.FirstName for item in scientists">
+                                <option value="">Select Scientist Please</option>
+                            </select>
+                        </div>
                         <br />
                         <div class="form-group">
-                            <label for="FirstName">First Name Name Name:</label>
+                            <label for="FirstName">First Name:</label>
                             <input type="text" class="form-control" id="FirstName" name="FirstName" ng-model="model.Scientist.FirstName" required />
                         </div>
                         <div class="form-group">
@@ -43,7 +45,7 @@
                     <br />
                     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Add File</button>
                     <div id="demo" class="collapse">
-                        <div ng-controller="FileUpload">
+                        <div>
                             <form novalidate name="f1" ng-submit="SaveFile()">
                                 <div style="color: red">{{Message}}</div>
                                 <table>
@@ -65,7 +67,7 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <input type="submit" value="Upload File1" />
+                                            <input type="submit" value="Upload File" />
                                         </td>
                                     </tr>
                                 </table>

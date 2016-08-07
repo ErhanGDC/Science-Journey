@@ -33,7 +33,6 @@ namespace ScienceJourney.DAL
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<Museum> Museums { get; set; }
         public virtual DbSet<Scientist> Scientists { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UploadedFile> UploadedFiles { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<City> Cities { get; set; }

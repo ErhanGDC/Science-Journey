@@ -218,9 +218,6 @@
     <Compile Include="DAL\sp_helpdiagrams_Result.cs">
       <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\sysdiagram.cs">
-      <DependentUpon>ScienceJourney.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\UploadedFile.cs">
       <DependentUpon>ScienceJourney.tt</DependentUpon>
     </Compile>
@@ -258,9 +255,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\footer.css" />
     <Content Include="Content\images\tesla.jpg" />
     <Content Include="Content\images\b1.jpg" />
     <Content Include="Content\images\sahb.jpg" />
+    <Content Include="Content\img.css" />
     <Content Include="Content\map.css" />
     <Content Include="Content\ScientistPic.css" />
     <Content Include="Content\scientists\Alan.jpg" />

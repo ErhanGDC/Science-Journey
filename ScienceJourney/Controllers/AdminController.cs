@@ -143,23 +143,57 @@ namespace ScienceJourney.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveScientist(AdminModel model)
+        public ActionResult SaveScientist(AdminModel model, string description)
         {
-            try
+            UploadedFile f = null;
+            string Message, fileName, actualFileName;
+            Message = fileName = actualFileName = string.Empty;
+            bool flag = false;
+            if (Request.Files != null)
             {
-                Scientist scientist = model.Scientist;
+                var file = Request.Files[0];
+                actualFileName = file.FileName;
+                fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                int size = file.ContentLength;
 
-                if (ModelState.IsValid)
+                try
                 {
-                    //Save Progcess
-                    context.Scientists.Add(scientist);
-                    context.SaveChanges();
+                    file.SaveAs(Path.Combine(Server.MapPath("~/UploadedFiles"), fileName));
+
+                    f = new UploadedFile
+                   {
+
+                       FileName = actualFileName,
+                       FilePath = fileName,
+                       Description = description,
+                       FileSize = size
+                   };
+                    using (ScienceJourneyEntities dc = new ScienceJourneyEntities())
+                    {
+                        dc.UploadedFiles.Add(f);
+                        dc.SaveChanges();
+                        Message = "File uploaded successfully";
+                        flag = true;
+
+                        //Scientist scientist = model.Scientist;
+                        //scientist.Picture = f.FilePath;
+
+                        //if (ModelState.IsValid)
+                        //{
+                        //    //Save Progcess
+                        //    context.Scientists.Add(scientist);
+                        //    context.SaveChanges();
+                        //}
+                    }
+                    flag = true;
                 }
-            }
-            catch (Exception ex)
-            {
-                log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
-                log.Error(ex.Message);
+                catch (Exception ex)
+                {
+                    Message = "File upload failed! Please try again";
+                    log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
+                    log.Error(ex.Message);
+                }
+
             }
             return RedirectToAction("Index");
         }

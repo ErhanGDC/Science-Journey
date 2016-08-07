@@ -53,29 +53,6 @@
                 $scope.scientists = response.data
             });
         }
-
-        $scope.send = function () {
-            debugger;
-            console.log($scope.scientists);
-            debugger;
-
-            //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
-            
-            //$scope.scientists.ScientistID = $scope.scientists.ScientistID;
-            //$scope.scientists.LastName = $scope.scientists.LastName;
-            //$scope.scientists.FirstName = $scope.scientists.FirstName;
-            //$scope.scientists.AddressID = $scope.scientists.AddressID;
-            //$scope.scientists.Title = $scope.scientists.Title;
-            //$scope.scientists.MiddleName = $scope.scientists.MiddleName;
-            //$scope.scientists.Picture = $scope.scientists.Picture;
-
-            $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
-                debugger;
-                console.log(response);
-                $scope.scientists = {};
-            })
-            window.location = window.location;
-        }
     })
 
     adminApp.controller('CtrlGetAddresses', function ($scope,$http) {
@@ -93,7 +70,30 @@
         }
     })
 
+    adminApp.controller('CtrlSaveScientist', function ($scope,$http) {
+        $scope.send = function () {
+            //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
+            $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
+                debugger;
+                console.log(response);
+                $scope.scientists = {};
+            })
+            window.location = window.location;
+        }
+    })
+
     adminApp.controller('FileUpload', function ($scope, FileUploadService) {
+
+        $scope.send = function () {
+            //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
+            $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
+                debugger;
+                console.log(response);
+                $scope.scientists = {};
+            })
+            //window.location = window.location;
+        }
+
         // Variables
         $scope.Message = "";
         $scope.FileInvalidMessage = "";
@@ -108,6 +108,7 @@
             $scope.IsFormValid = isValid;
         });
 
+      
 
         // THIS IS REQUIRED AS File Control is not supported 2 way binding features of Angular
         // ------------------------------------------------------------------------------------
@@ -151,7 +152,8 @@
             else {
                 $scope.Message = "All the fields are required.";
             }
-        };
+        };             
+
         //Clear form 
         function ClearForm() {
             $scope.FileDescription = "";
@@ -176,7 +178,7 @@
         formData.append("description", description);
 
         var defer = $q.defer();
-        $http.post("/Admin/SaveFiles", formData,
+        $http.post("/Admin/SaveScientist", formData,
             {
                 withCredentials: true,
                 headers: { 'Content-Type': undefined },
