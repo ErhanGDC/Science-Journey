@@ -514,3 +514,4 @@ C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.T
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.dll
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.pdb
+C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
