@@ -10,16 +10,16 @@
     <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
 </head>
-<body ng-app="adminApp">
+<body ng-app="adminApp" ng-controller="CtrlSaveData" ng-init="init()">
     <br />
     <br />
     <div class="container" class="form-group">
         <div class="panel-group">
             <div class="panel panel-info">
                 <div class="panel-heading">Scientists</div>
-                <div class="panel-body" align="left" ng-controller="FileUpload">
+                <div class="panel-body" align="left" ng-controller="CtrlFileUpload">
                     <div>
-                        <div ng-controller="CtrlGetScientist" ng-init="init()">
+                        <div>
                             <select class="form-control" ng-model="Scientist" ng-options="item.ScientistID as item.FirstName for item in scientists">
                                 <option value="">Select Scientist Please</option>
                             </select>
@@ -76,25 +76,46 @@
                     </div>
                     <br />
                     <br />
-                    <button type="button" class="btn btn-primary" ng-click="send()">Submit</button>
+                    <button type="button" class="btn btn-primary" ng-click="sendScientist()">Submit</button>
                 </div>
             </div>
         </div>
     </div>
     <br />
-    <br />   
+    <br />
 
-    <div class="form-group" ng-controller="CtrlGetArtefact" ng-init="init()" align="left">
+    <div class="form-group"  align="left">
         <br />
         <br />
         <p>Artefacts Info</p>
         <select class="form-control" ng-model="Artefact" ng-options="item.ArtefactID as item.ArtefactName for item in artefacts">
             <option value="">Select Artefact Please</option>
         </select>
+
         <h3>You selected: {{Artefact}}</h3>
+        <br />
+        <div class="form-group">
+            <label for="ArtefactName">Artefac Name:</label>
+            <input type="text" class="form-control" id="ArtefacName" name="ArtefactName" ng-model="model.Scientist.ArtefactName" required />
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="ArtefactDescription">Artefact Description:</label>
+            <input type="text" class="form-control" id="ArtefactDescription" name="ArtefactDescription" ng-model="model.Artefact.ArtefactDescription">
+        </div>
+        <br />
+        <div class="form-group" align="left">
+            <p>Museum Info</p>
+            <select class="form-control" ng-model="Museum" ng-options="item.MuseumID as item.MuseumName for item in museums">
+                <option value="">Select Museum Please</option>
+            </select>
+            <input type="text" class="form-control" id="MuseumID" name="MuseumID" ng-model="model.Artefact.MuseumID" ng-disabled="true" ng-bind="Museum">
+        </div>
+        <br />
+        <button type="button" class="btn btn-primary" ng-click="sendArtefacts()">Submit</button>
     </div>
 
-    <div class="form-group" ng-controller="CtrlGetMuseums" ng-init="init()" align="left">
+    <div class="form-group" align="left">
         <br />
         <br />
         <p>Museum Info</p>
@@ -104,7 +125,7 @@
         <h3>You selected: {{Museum}}</h3>
     </div>
 
-    <div class="form-group" ng-controller="CtrlGetArticles" ng-init="init()" align="left">
+    <div class="form-group" align="left">
         <br />
         <br />
         <p>Articles Info</p>
@@ -114,7 +135,7 @@
         <h3>You selected: {{Articles}}</h3>
     </div>
 
-    <div class="form-group" ng-controller="CtrlGetAddresses" ng-init="init()" align="left">
+    <div class="form-group"  align="left">
         <br />
         <br />
         <p>Addresses Info</p>

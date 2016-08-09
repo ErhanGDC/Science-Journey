@@ -197,6 +197,86 @@ namespace ScienceJourney.Controllers
             }
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public ActionResult SaveArtefact(AdminModel model)
+        {
+            try
+            {
+                Artefact artefact = model.Artefact;
+                if (ModelState.IsValid)
+                {
+                    //Save Progcess
+                    context.Artefacts.Add(artefact);
+                    context.SaveChanges();
+                }
+            }
+             catch (Exception ex)
+            {
+                log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
+                log.Error(ex.Message);
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult SaveMuseums(AdminModel model)
+        {
+            try
+            {
+                Museum museum = model.Museum;
+                if (ModelState.IsValid)
+                {
+                    //Save Progcess
+                    context.Museums.Add(museum);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
+                log.Error(ex.Message);
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult SaveArticles(AdminModel model)
+        {
+            try
+            {
+                Article article = model.Article;
+                if (ModelState.IsValid)
+                {
+                    //Save Progcess
+                    context.Articles.Add(article);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
+                log.Error(ex.Message);
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult SaveAddresses(AdminModel model)
+        {
+            try
+            {
+                Address address = model.Address;
+                if (ModelState.IsValid)
+                {
+                    //Save Progcess
+                    context.Addresses.Add(address);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Info(String.Format("Exception occurred" + MethodBase.GetCurrentMethod()));
+                log.Error(ex.Message);
+            }
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public JsonResult SaveFiles(string description)
@@ -239,6 +319,15 @@ namespace ScienceJourney.Controllers
 
             }
             return new JsonResult { Data = new { Message = Message, Status = flag } };
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                context.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

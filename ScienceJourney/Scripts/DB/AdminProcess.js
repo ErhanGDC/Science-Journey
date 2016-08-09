@@ -3,24 +3,24 @@
 
     var adminApp = angular.module('adminApp', []);
 
-    adminApp.controller('CtrlGetArtefact', function ($scope, $http) {
+    adminApp.controller('CtrlSaveData', function ($scope, $http) {
+
         $scope.init = function () {
             GetArtefact();
+            GetMuseums();
+            GetArticles();
+            GetScientist();
+            GetAddresses();
         };
+
         var GetArtefact = function () {
-            $http.get("/Artefact/GetArtefacts").then(function (response) {
+            $http.get("/Admin/GetArtefacts").then(function (response) {
                 $scope.artefacts = response.data;
             });
+            debugger;
+            console.log($scope.artefacts);
+            debugger;
         }
-        debugger;
-        console.log($scope.artefacts);
-        debugger;
-    });
-
-    adminApp.controller('CtrlGetMuseums', function ($scope, $http) {
-        $scope.init = function () {
-            GetMuseums();
-        };
         var GetMuseums = function () {
             $http.get("/Admin/GetMuseums").then(function (response) {
                 $scope.museums = response.data;
@@ -29,49 +29,35 @@
             console.log($scope.museums);
             debugger;
         }
-    });
-
-    adminApp.controller('CtrlGetArticles', function ($scope,$http) {
-        $scope.init = function () {
-            GetArticles();
-        };
         var GetArticles = function () {
             $http.get("/Admin/GetArticles").then(function (response) {
-                $scope.articles = response.data;})
-        }
-        debugger;
-        console.log($scope.articles);
-        debugger;
-    })
-
-    adminApp.controller('CtrlGetScientist', function ($scope, $http) {
-        $scope.init = function () {
-            GetScientist();
+                $scope.articles = response.data;
+            })
         }
         var GetScientist = function () {
             $http.get("/Admin/GetScientist").then(function (response) {
                 $scope.scientists = response.data
             });
         }
-    })
-
-    adminApp.controller('CtrlGetAddresses', function ($scope,$http) {
-        $scope.init=function()
-        {
-            GetAddresses();
-        }
         var GetAddresses = function () {
             $http.get("/Admin/GetAddresses").then(function (response) {
                 $scope.addresses = response.data;
             });
-            debugger;
-            console.log($scope.addresses);
-            debugger;
         }
-    })
 
-    adminApp.controller('CtrlSaveScientist', function ($scope,$http) {
-        $scope.send = function () {
+        $scope.sendArtefacts = function () {
+            $scope.artefacts.ArtefactDescription = $scope.artefacts.ArtefactDescription;
+            $scope.artefacts.ArtefactName = $scope.artefacts.ArtefactName;
+            $scope.artefacts.MuseumID = $scope.artefacts.MuseumID;
+
+            $http.post('/Admin/SaveArtefact', $scope.artefacts).then(function (response) {
+                debugger;
+                console.log(response);
+                $scope.artefacts = {};
+            })
+        }
+
+        $scope.sendScientist = function () {
             //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
             $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
                 debugger;
@@ -80,20 +66,40 @@
             })
             window.location = window.location;
         }
-    })
 
-    adminApp.controller('FileUpload', function ($scope, FileUploadService) {
-
-        $scope.send = function () {
+        $scope.sendMuseums = function () {
             //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
-            $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
+            $http.post('/Admin/SaveMuseums', $scope.model).then(function (response) {
                 debugger;
                 console.log(response);
-                $scope.scientists = {};
+                $scope.museums = {};
             })
-            //window.location = window.location;
+            window.location = window.location;
         }
 
+        $scope.sendArticles = function () {
+            //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
+            $http.post('/Admin/SaveArticles', $scope.model).then(function (response) {
+                debugger;
+                console.log(response);
+                $scope.articles = {};
+            })
+            window.location = window.location;
+        }
+
+        $scope.sendAddresses = function () {
+            //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
+            $http.post('/Admin/SaveAddresses', $scope.model).then(function (response) {
+                debugger;
+                console.log(response);
+                $scope.addresses = {};
+            })
+            window.location = window.location;
+        }
+    });
+
+
+    adminApp.controller('CtrlFileUpload', function ($scope, FileUploadService) {
         // Variables
         $scope.Message = "";
         $scope.FileInvalidMessage = "";
@@ -178,7 +184,7 @@
         formData.append("description", description);
 
         var defer = $q.defer();
-        $http.post("/Admin/SaveScientist", formData,
+        $http.post("/Admin/SaveFiles", formData,
             {
                 withCredentials: true,
                 headers: { 'Content-Type': undefined },
@@ -196,6 +202,23 @@
     }
     return fac;
 
-});
+    });
+
+
+    fileupload = function () {
+
+        upload(file, function (response) {
+
+            if (response.uploadcomplate) {
+
+                saveUser();
+
+
+            }
+
+        });
+
+    }
+
 })();
 

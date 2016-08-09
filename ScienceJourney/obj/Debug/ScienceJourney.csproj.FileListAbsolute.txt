@@ -512,6 +512,6 @@ C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.O
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.dll
 C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.pdb
-C:\Users\LG\Desktop\Science-Journey\ScienceJourney\obj\Debug\ScienceJourney.csprojResolveAssemblyReference.cache
