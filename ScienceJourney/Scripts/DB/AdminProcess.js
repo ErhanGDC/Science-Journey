@@ -58,6 +58,8 @@
         }
 
         $scope.sendScientist = function () {
+            debugger;
+            console.log(('send scientist calisti'));
             //$scope.scientists  //// bu şekilde action'daki AdminModel model'e denk geliyor.
             $http.post('/Admin/SaveScientist', $scope.model).then(function (response) {
                 debugger;
@@ -178,6 +180,8 @@
 
     var fac = {};
     fac.UploadFile = function (file, description) {
+        debugger;
+        console.log('upload file çalıştı');
         var formData = new FormData();
         formData.append("file", file);
         //We can send more data to server using append         
